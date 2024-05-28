@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "TrailerStreamingService.gRPC";
+
+package streaming;
+
+service Streaming {
+  rpc GetMovieTrailer (TrailerRequest) returns (TrailerReply);
+}
+
+message TrailerRequest {
+  string userName = 1;
+  string password = 2;
+  int32 movieId =3;
+}
+
+message TrailerReply {
+  bool succeeded = 1;
+  string message = 2;
+  bytes video = 3;
+}
+
+

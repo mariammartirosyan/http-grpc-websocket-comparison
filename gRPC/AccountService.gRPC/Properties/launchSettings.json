@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5033",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DefaultConnection": "Server=127.0.0.1;Database=P2AccountDB;User ID=root;Password=pass;Port=3306"
+      },
+      "dotnetRunMessages": true
+    }
+  }
+}

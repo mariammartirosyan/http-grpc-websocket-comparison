@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/TrailerStreamingService.API.props" />
+</Project>

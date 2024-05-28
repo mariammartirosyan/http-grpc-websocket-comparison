@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "StatisticsService.gRPC";
+
+package statistics;
+
+service StatisticsManagement {
+  rpc AddStatisticsEntry (AddStatisticsRequest) returns (AddStatisticsReply);
+}
+
+message AddStatisticsRequest {
+  string userName = 1;
+  int32 movieId = 2;
+}
+
+message AddStatisticsReply {
+  bool succeeded = 1;
+  string message = 2;
+}

@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MovieService.gRPC";
+
+package movie;
+
+service MovieManagement {
+  rpc GetMovieById (GetMovieRequest) returns (GetMovieReply);
+}
+
+// The request message containing the user's name.
+message GetMovieRequest {
+  int32 id = 1;
+}
+
+message Genre {
+    string name = 1; 
+}
+message GetMovieReply {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    repeated Genre genre = 4;
+    string director = 5;
+    int32 releaseYear = 6;
+    string youTubeLink = 7;
+}
+

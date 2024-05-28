@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5265",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AccountServiceUrl": "http://localhost:5033",
+        "StatisticsServiceUrl": "http://localhost:5164"
+      },
+      "dotnetRunMessages": true
+    }
+  }
+}

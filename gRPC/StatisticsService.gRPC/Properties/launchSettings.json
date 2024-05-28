@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5164",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AccountServiceUrl": "http://localhost:5033",
+        "MovieServiceUrl": "http://localhost:5264",
+        "DefaultConnection": "Server=127.0.0.1;Database=P2StasticsDB;User ID=root;Password=pass;Port=3306"
+      },
+      "dotnetRunMessages": true
+    }
+  }
+}

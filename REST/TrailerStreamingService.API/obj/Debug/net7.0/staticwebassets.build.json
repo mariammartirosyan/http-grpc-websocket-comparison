@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "G3j0zNvTCznPiyTkzAKAVzN2g4IT9ECPUhPFClGiAxk=",
+  "Source": "TrailerStreamingService.API",
+  "BasePath": "_content/TrailerStreamingService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
