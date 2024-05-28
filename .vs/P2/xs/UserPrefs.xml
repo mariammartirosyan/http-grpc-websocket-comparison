@@ -1,0 +1,70 @@
+﻿<Properties StartupConfiguration="{21EAC7CE-02A0-4C12-9CE7-E0AC11D68806}|http">
+  <MonoDevelop.Ide.ItemProperties.AccountService.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieService.Library/Migrations/20240518141652_InitialMigration.cs">
+    <Files>
+      <File FileName="MovieServiceInfrastructure/CsvHelpers/MovieMapping.cs" Line="3" Column="27" />
+      <File FileName="MovieServiceInfrastructure/CsvHelpers/GenreMapping.cs" Line="3" Column="27" />
+      <File FileName="MovieServiceInfrastructure/MovieDbContext.cs" Line="13" Column="48" />
+      <File FileName="MovieServiceInfrastructure/Domain/MovieGenre.cs" Line="2" Column="31" />
+      <File FileName="MovieServiceInfrastructure/CsvHelpers/MovieGenreMapping.cs" Line="3" Column="27" />
+      <File FileName="MovieServiceInfrastructure/Repositories/MovieRepository.cs" Line="5" Column="31" />
+      <File FileName="MovieServiceInfrastructure/Repositories/GenreRepository.cs" Line="2" Column="27" />
+      <File FileName="MovieService.API/Program.cs" />
+      <File FileName="MovieService.API/Properties/launchSettings.json" />
+      <File FileName="MovieService.API/Controllers/MovieController.cs" />
+      <File FileName="MovieServiceInfrastructure/Seed Data/Genres.csv" />
+      <File FileName="MovieServiceInfrastructure/Domain/Movie.cs" Line="2" Column="31" />
+      <File FileName="MovieServiceInfrastructure/Domain/Genre.cs" Line="5" Column="22" />
+      <File FileName="MovieService.API/DTOs/MovieDTO.cs" />
+      <File FileName="MovieService.API/DTOs/GenreDTO.cs" />
+      <File FileName="MovieServiceInfrastructure/CsvHelpers/CsvDataReader.cs" Line="7" Column="31" />
+      <File FileName="AccountService.API/Program.cs" Line="81" Column="35" />
+      <File FileName="AccountService.API/appsettings.json" />
+      <File FileName="AccountService.API/Properties/launchSettings.json" />
+      <File FileName="AccountService.API/Controllers/AccountController.cs" Line="21" Column="56" />
+      <File FileName="AccountService.Library/Migrations/UserDbContextModelSnapshot.cs" Line="11" Column="2" />
+      <File FileName="AccountService.Library/Migrations/20240518200709_InitialMigration.Designer.cs" Line="21" Column="25" />
+      <File FileName="AccountService.Library/UserDbContext.cs" Line="1" Column="1" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets" Line="2116" Column="5" />
+      <File FileName="AccountService.Library/Constants/Roles.cs" Line="2" Column="11" />
+      <File FileName="MovieServiceInfrastructure/Migrations/20240518141652_InitialMigration.cs" Line="8" Column="31" />
+      <File FileName="MovieServiceInfrastructure/Migrations/20240518141652_InitialMigration.Designer.cs" Line="6" Column="27" />
+      <File FileName="MovieServiceInfrastructure/Migrations/MovieDbContextModelSnapshot.cs" Line="9" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="P2" expanded="True">
+            <Node name="AccountService.API" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="AccountService.Library" expanded="True" />
+            <Node name="MovieService.API" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="DTOs" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/MovieService.API/Program.cs" relfile="MovieService.API/Program.cs" line="100" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TrailerStreamingService.Library FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.MovieService.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

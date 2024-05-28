@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "A9b+wuMaKS17AepKu+N5igYwQ9pGfIs5Aj/+Wpg1U4Q=",
+  "Source": "AccountService.API",
+  "BasePath": "_content/AccountService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

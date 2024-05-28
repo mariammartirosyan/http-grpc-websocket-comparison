@@ -1,0 +1,30 @@
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.csproj.AssemblyReference.cache
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.AssemblyInfoInputs.cache
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.AssemblyInfo.cs
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.csproj.CoreCompileInputs.cache
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/bin/Debug/net7.0/Seed Data/Users.csv
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/bin/Debug/net7.0/AccountService.Library.deps.json
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/bin/Debug/net7.0/AccountService.Library.runtimeconfig.json
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/bin/Debug/net7.0/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/bin/Debug/net7.0/AccountService.Library.pdb
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/refint/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.pdb
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/AccountService.Library.genruntimeconfig.cache
+/Users/mariammartirosyan/Desktop/P2/P2/AccountService.Library/obj/Debug/net7.0/ref/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/bin/Debug/net7.0/Seed Data/Users.csv
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/bin/Debug/net7.0/AccountService.Library.deps.json
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/bin/Debug/net7.0/AccountService.Library.runtimeconfig.json
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/bin/Debug/net7.0/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/bin/Debug/net7.0/AccountService.Library.pdb
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.csproj.AssemblyReference.cache
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.AssemblyInfoInputs.cache
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.AssemblyInfo.cs
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.csproj.CoreCompileInputs.cache
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/refint/AccountService.Library.dll
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.pdb
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/AccountService.Library.genruntimeconfig.cache
+/Users/mariammartirosyan/Desktop/P2/P2/Libraries/AccountService.Library/obj/Debug/net7.0/ref/AccountService.Library.dll
