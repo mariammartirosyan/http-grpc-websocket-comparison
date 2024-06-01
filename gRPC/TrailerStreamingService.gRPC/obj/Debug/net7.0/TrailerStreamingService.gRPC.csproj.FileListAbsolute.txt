@@ -88,6 +88,14 @@
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Grpc.Net.Client.dll
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Grpc.Net.ClientFactory.dll
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Grpc.Net.Common.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/TrailerStreamingService.Library.dll
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/TrailerStreamingService.Library.pdb
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/TrailerStreamingService.gRPC.csproj.AssemblyReference.cache
@@ -110,11 +118,3 @@
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/TrailerStreamingService.gRPC.pdb
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/TrailerStreamingService.gRPC.genruntimeconfig.cache
 /Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/ref/TrailerStreamingService.gRPC.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
-/Users/mariammartirosyan/Desktop/P2/P2/gRPC/TrailerStreamingService.gRPC/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

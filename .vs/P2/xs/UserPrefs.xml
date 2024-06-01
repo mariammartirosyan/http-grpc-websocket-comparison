@@ -1,62 +1,62 @@
-﻿<Properties StartupConfiguration="{25D4C244-80EE-467D-9ABB-C3E17040C72F}|http" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{25D4C244-80EE-467D-9ABB-C3E17040C72F}|http">
+  <MonoDevelop.Ide.ItemProperties.WebSockets.MovieService.WebSocket FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.gRPC.StatisticsService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.gRPC.MovieService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets">
     <Files>
-      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets" Line="1" Column="1" />
       <File FileName="Libraries/MovieService.Library/Services/MovieService.cs" />
       <File FileName="Libraries/MovieService.Library/Domain/Movie.cs" />
-      <File FileName="gRPC/MovieService.gRPC/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="gRPC/MovieService.gRPC/appsettings.json" Line="1" Column="1" />
-      <File FileName="gRPC/MovieService.gRPC/Services/MovieManagementService.cs" Line="56" Column="37" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Services/StreamingService.cs" Line="54" Column="87" />
-      <File FileName="REST/TrailerStreamingService.API/Controllers/TrailerStreamingController.cs" Line="33" Column="31" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Program.cs" Line="48" Column="1" />
+      <File FileName="gRPC/MovieService.gRPC/Properties/launchSettings.json" />
+      <File FileName="gRPC/MovieService.gRPC/appsettings.json" />
+      <File FileName="gRPC/MovieService.gRPC/Services/MovieManagementService.cs" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Services/StreamingService.cs" />
+      <File FileName="REST/TrailerStreamingService.API/Controllers/TrailerStreamingController.cs" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Program.cs" />
       <File FileName="REST/StatisticsService.API/Program.cs" />
-      <File FileName="gRPC/StatisticsService.gRPC/Program.cs" Line="81" Column="1" />
+      <File FileName="gRPC/StatisticsService.gRPC/Program.cs" />
       <File FileName="REST/StatisticsService.API/Properties/launchSettings.json" />
-      <File FileName="gRPC/StatisticsService.gRPC/Properties/launchSettings.json" Line="9" Column="50" />
-      <File FileName="gRPC/StatisticsService.gRPC/appsettings.json" Line="1" Column="1" />
-      <File FileName="gRPC/GrpcClient/Properties/launchSettings.json" Line="31" Column="6" />
-      <File FileName="gRPC/GrpcClient/Controllers/HomeController.cs" Line="103" Column="6" />
-      <File FileName="gRPC/StatisticsService.gRPC/Protos/movie.proto" Line="1" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/Protos/account.proto" Line="1" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/Services/AccountManagementService.cs" Line="36" Column="68" />
-      <File FileName="gRPC/AccountService.gRPC/Program.cs" Line="97" Column="1" />
-      <File FileName="REST/StatisticsService.API/Controllers/StatisticsController.cs" Line="1" Column="1" />
+      <File FileName="gRPC/StatisticsService.gRPC/Properties/launchSettings.json" />
+      <File FileName="gRPC/StatisticsService.gRPC/appsettings.json" />
+      <File FileName="gRPC/GrpcClient/Properties/launchSettings.json" />
+      <File FileName="gRPC/GrpcClient/Controllers/HomeController.cs" />
+      <File FileName="gRPC/StatisticsService.gRPC/Protos/movie.proto" />
+      <File FileName="gRPC/AccountService.gRPC/Protos/account.proto" />
+      <File FileName="gRPC/AccountService.gRPC/Services/AccountManagementService.cs" />
+      <File FileName="gRPC/AccountService.gRPC/Program.cs" />
+      <File FileName="REST/StatisticsService.API/Controllers/StatisticsController.cs" />
       <File FileName="Libraries/AccountService.Library/Services/AccountService.cs" />
       <File FileName="Libraries/StatisticsService.Library/StatisticsDbContext.cs" />
-      <File FileName="gRPC/StatisticsService.gRPC/Protos/statistics.proto" Line="19" Column="2" />
+      <File FileName="gRPC/StatisticsService.gRPC/Protos/statistics.proto" />
       <File FileName="REST/AccountService.API/Controllers/AccountController.cs" />
       <File FileName="gRPC/MovieService.gRPC/Protos/movie.proto" />
       <File FileName="gRPC/StatisticsService.gRPC/Protos/account.proto" />
       <File FileName="Libraries/AccountService.Library/DTOs/UserDTO.cs" />
       <File FileName="REST/MovieService.API/Controllers/MovieController.cs" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/streaming.proto" Line="24" Column="1" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/streaming.proto" />
       <File FileName="Libraries/TrailerStreamingService.Library/Services/StreamingService.cs" />
       <File FileName="gRPC/GrpcClient/Protos/account.proto" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/statistics.proto" Line="19" Column="2" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Properties/launchSettings.json" Line="9" Column="30" />
-      <File FileName="REST/TrailerStreamingService.API/Program.cs" Line="35" Column="13" />
-      <File FileName="gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" Line="26" Column="1" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/statistics.proto" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Properties/launchSettings.json" />
+      <File FileName="REST/TrailerStreamingService.API/Program.cs" />
+      <File FileName="gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" />
       <File FileName="Libraries/StatisticsService.Library/Services/StatisticsService.cs" />
       <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/account.proto" />
-      <File FileName="gRPC/GrpcClient/Program.cs" Line="36" Column="28" />
-      <File FileName="gRPC/GrpcClient/Protos/streaming.proto" Line="21" Column="2" />
-      <File FileName="gRPC/GrpcClient/Protos/statistics.proto" Line="1" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/appsettings.json" Line="19" Column="1" />
-      <File FileName="gRPC/GrpcClient/obj/Debug/net7.0/Protos/AccountGrpc.cs" Line="51" Column="1" />
-      <File FileName="gRPC/MovieService.gRPC/Program.cs" Line="85" Column="57" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/appsettings.json" Line="1" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/obj/Debug/net7.0/Protos/AccountGrpc.cs" Line="20" Column="1" />
-      <File FileName="REST/TrailerStreamingService.API/DTOs/TrailerDTO.cs" Line="13" Column="6" />
-      <File FileName="gRPC/GrpcClient/DTOs/TrailerDTO.cs" Line="4" Column="18" />
+      <File FileName="gRPC/GrpcClient/Program.cs" />
+      <File FileName="gRPC/GrpcClient/Protos/streaming.proto" />
+      <File FileName="gRPC/GrpcClient/Protos/statistics.proto" />
+      <File FileName="gRPC/AccountService.gRPC/appsettings.json" />
+      <File FileName="gRPC/MovieService.gRPC/Program.cs" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/appsettings.json" />
+      <File FileName="REST/TrailerStreamingService.API/DTOs/TrailerDTO.cs" />
+      <File FileName="gRPC/GrpcClient/DTOs/TrailerDTO.cs" />
+      <File FileName="Libraries/AccountService.Library/DTOs/LoginDTO.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="P2" expanded="True">
+          <Node name="P2" expanded="True" selected="True">
             <Node name="gRPC" expanded="True" />
-            <Node name="Libraries" expanded="True" />
-            <Node name="REST" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -67,20 +67,19 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>MovieService.Library/MovieService.Library.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.WebSockets.AccountService.WebSocket FirstBuild="True" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/MovieService.API/Program.cs" relfile="MovieService.API/Program.cs" line="97" column="1" />
     <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/GrpcClient/Controllers/HomeController.cs" relfile="GrpcClient/Controllers/HomeController.cs" line="48" column="1" />
     <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/gRPC/GrpcClient/Controllers/HomeController.cs" relfile="gRPC/GrpcClient/Controllers/HomeController.cs" line="79" column="1" />
     <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/gRPC/GrpcClient/Controllers/HomeController.cs" relfile="gRPC/GrpcClient/Controllers/HomeController.cs" line="62" column="1" />
     <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" relfile="gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" line="26" column="1" />
+    <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" relfile="WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" line="24" column="1" />
+    <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" relfile="WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" line="16" column="1" />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.gRPC.MovieService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.gRPC.StatisticsService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

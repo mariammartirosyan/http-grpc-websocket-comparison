@@ -31,6 +31,7 @@ namespace MovieService.API.Controllers
             try
             {
                 var movies = movieRepository.GetAll();
+               
                 if (movies != null)
                 {
                     return Content(JsonSerializer.Serialize(movies), "application/json");

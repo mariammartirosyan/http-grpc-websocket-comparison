@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4QonQqeFifN9CI5jZ6BjS/deFP6cIu3DhxvLvU9xwCk=",
+  "Source": "AccountService.WebSocket",
+  "BasePath": "_content/AccountService.WebSocket",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

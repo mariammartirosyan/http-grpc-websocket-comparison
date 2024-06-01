@@ -76,7 +76,7 @@ builder.Services.AddAuthentication(options =>
 //source end
 
 builder.Services.AddScoped<StatisticsRepository>();
-builder.Services.AddScoped<StatisticsService>();
+builder.Services.AddScoped<StatisticsService.Library.Services.StatisticsService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

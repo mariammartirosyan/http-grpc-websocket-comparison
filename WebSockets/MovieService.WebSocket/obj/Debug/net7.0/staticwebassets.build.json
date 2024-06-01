@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wTzRmfZ1xuLhUL2T75gOwDkJJujrtwTFH3m2WtmOtPM=",
+  "Source": "MovieService.WebSocket",
+  "BasePath": "_content/MovieService.WebSocket",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

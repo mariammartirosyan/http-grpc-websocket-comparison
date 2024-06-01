@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "AAq7n+N0nN34qkgmUB5AUDJ7sLPXZrUgfDRN/ltnAeY=",
+  "Source": "TrailerStreamingService.WebSocket",
+  "BasePath": "_content/TrailerStreamingService.WebSocket",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
