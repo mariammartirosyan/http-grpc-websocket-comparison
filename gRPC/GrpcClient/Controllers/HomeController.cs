@@ -13,7 +13,7 @@ using GrpcClient.DTOs;
 namespace GrpcClient.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")]
     public class HomeController: ControllerBase
 	{
         #region Test
@@ -96,9 +96,12 @@ namespace GrpcClient.Controllers
             var client = new Streaming.StreamingClient(channel);
             var reply = await client.GetMovieTrailerAsync(
                               new TrailerRequest { UserName = trailerDTO.User.UserName, Password = trailerDTO.User.Password, MovieId = trailerDTO.MovieId});
-            var bytes = reply.Video.ToByteArray();
+            if (reply.Succeeded)
+            {
+                return File(reply.Video.ToByteArray(), "video/mp4");
+            }
+            return StatusCode(400, reply.Message);
 
-            return File(bytes, "video/mp4");
         }
     }
 

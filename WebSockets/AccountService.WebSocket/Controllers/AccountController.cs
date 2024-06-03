@@ -37,7 +37,7 @@ namespace AccountService.WebSocket.Controllers
                 {
                     var jsonMessage = Encoding.UTF8.GetString(buffer, 0, received.Count);
                     var loginDTO = JsonSerializer.Deserialize<LoginDTO>(jsonMessage);
-                    var result = await _accountService.Login1(loginDTO, _config["JWT:Secret"]);
+                    var result = await _accountService.Login(loginDTO, _config["JWT:Secret"]);
 
                     var responseBuffer = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(result));
                     await webSocket.SendAsync(new ArraySegment<byte>(responseBuffer), WebSocketMessageType.Text, true, CancellationToken.None);

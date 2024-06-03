@@ -68,43 +68,43 @@ namespace AccountService.Library.Services
             return response;
         }
 
+        //public async Task<Response> Login(LoginDTO loginDTO, string jwtSecret)
+        //{
+        //    var response = new Response();
+        //    try
+        //    {
+        //        var result = await _signInManager.PasswordSignInAsync(loginDTO.UserName, loginDTO.Password, false, false);
+
+        //        if (result.Succeeded)
+        //        {
+        //            var user = await _userManager.FindByNameAsync(loginDTO.UserName);
+        //            var claims = new List<Claim>
+        //            {
+        //               new Claim(ClaimTypes.Email, user.Email),
+        //               new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        //            };
+
+        //            (await _userManager.GetRolesAsync(user)).ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
+
+        //            response.StatusCode = 200;
+        //            response.Message = GenerateToken(claims, jwtSecret);
+        //        }
+        //        else
+        //        {
+        //            response.StatusCode = 401;
+        //            response.Message = "Login failed with the given userName and password";
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        response.StatusCode = 500;
+        //        response.Message = $"Error occured: {ex}";
+        //    }
+        //    return response;
+        //}
+
         public async Task<Response> Login(LoginDTO loginDTO, string jwtSecret)
-        {
-            var response = new Response();
-            try
-            {
-                var result = await _signInManager.PasswordSignInAsync(loginDTO.UserName, loginDTO.Password, false, false);
-
-                if (result.Succeeded)
-                {
-                    var user = await _userManager.FindByNameAsync(loginDTO.UserName);
-                    var claims = new List<Claim>
-                    {
-                       new Claim(ClaimTypes.Email, user.Email),
-                       new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    };
-
-                    (await _userManager.GetRolesAsync(user)).ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
-
-                    response.StatusCode = 200;
-                    response.Message = GenerateToken(claims, jwtSecret);
-                }
-                else
-                {
-                    response.StatusCode = 401;
-                    response.Message = "Login failed with the given userName and password";
-
-                }
-            }
-            catch (Exception ex)
-            {
-                response.StatusCode = 500;
-                response.Message = $"Error occured: {ex}";
-            }
-            return response;
-        }
-
-        public async Task<Response> Login1(LoginDTO loginDTO, string jwtSecret)
         {
             var response = new Response();
             try

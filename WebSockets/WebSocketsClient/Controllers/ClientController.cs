@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using System.Net.WebSockets;
+﻿using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 using WebSocketsClient.DTOs;
-using Microsoft.Extensions.Hosting;
 
 namespace WebSocketsClient.Controllers
 {
