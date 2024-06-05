@@ -28,7 +28,7 @@ namespace TrailerStreamingService.gRPC.Services
                 using var channel = GrpcChannel.ForAddress(Environment.GetEnvironmentVariable("AccountServiceUrl"));
                 var client = new AccountManagement.AccountManagementClient(channel);
                 var loginReply = await client.LoginAsync(
-                                  new LoginRequest { UserName = request.UserName, Password = request.Password });
+                                  new LoginRequest { UserName = request.User.UserName, Password = request.User.Password });
 
                 if (loginReply.Succeeded)
                 {
@@ -39,7 +39,7 @@ namespace TrailerStreamingService.gRPC.Services
                     using var statisticsChannel = GrpcChannel.ForAddress(Environment.GetEnvironmentVariable("StatisticsServiceUrl"));
                     var statisticsClient = new StatisticsManagement.StatisticsManagementClient(statisticsChannel);
                     var statisticsReply = await statisticsClient.AddStatisticsEntryAsync(
-                                      new AddStatisticsRequest { UserName = request.UserName, MovieId = request.MovieId }, headers);
+                                      new AddStatisticsRequest { UserName = request.User.UserName, MovieId = request.MovieId }, headers);
 
                     var bytes = _streamingService.GetMovieTrailerBytes(request.MovieId);
                     if (bytes != null)

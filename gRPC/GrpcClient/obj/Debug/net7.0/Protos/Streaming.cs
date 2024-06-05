@@ -24,18 +24,20 @@ namespace TrailerStreamingService.gRPC {
     static StreamingReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQcm90b3Mvc3RyZWFtaW5nLnByb3RvEglzdHJlYW1pbmciRQoOVHJhaWxl",
-            "clJlcXVlc3QSEAoIdXNlck5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkS",
-            "DwoHbW92aWVJZBgDIAEoBSJBCgxUcmFpbGVyUmVwbHkSEQoJc3VjY2VlZGVk",
-            "GAEgASgIEg8KB21lc3NhZ2UYAiABKAkSDQoFdmlkZW8YAyABKAwyUgoJU3Ry",
-            "ZWFtaW5nEkUKD0dldE1vdmllVHJhaWxlchIZLnN0cmVhbWluZy5UcmFpbGVy",
-            "UmVxdWVzdBoXLnN0cmVhbWluZy5UcmFpbGVyUmVwbHlCH6oCHFRyYWlsZXJT",
-            "dHJlYW1pbmdTZXJ2aWNlLmdSUENiBnByb3RvMw=="));
+            "ChZQcm90b3Mvc3RyZWFtaW5nLnByb3RvEglzdHJlYW1pbmciQAoOVHJhaWxl",
+            "clJlcXVlc3QSHQoEdXNlchgBIAEoCzIPLnN0cmVhbWluZy5Vc2VyEg8KB21v",
+            "dmllSWQYAiABKAUiQQoMVHJhaWxlclJlcGx5EhEKCXN1Y2NlZWRlZBgBIAEo",
+            "CBIPCgdtZXNzYWdlGAIgASgJEg0KBXZpZGVvGAMgASgMIioKBFVzZXISEAoI",
+            "dXNlck5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkyUgoJU3RyZWFtaW5n",
+            "EkUKD0dldE1vdmllVHJhaWxlchIZLnN0cmVhbWluZy5UcmFpbGVyUmVxdWVz",
+            "dBoXLnN0cmVhbWluZy5UcmFpbGVyUmVwbHlCH6oCHFRyYWlsZXJTdHJlYW1p",
+            "bmdTZXJ2aWNlLmdSUENiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TrailerStreamingService.gRPC.TrailerRequest), global::TrailerStreamingService.gRPC.TrailerRequest.Parser, new[]{ "UserName", "Password", "MovieId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TrailerStreamingService.gRPC.TrailerReply), global::TrailerStreamingService.gRPC.TrailerReply.Parser, new[]{ "Succeeded", "Message", "Video" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TrailerStreamingService.gRPC.TrailerRequest), global::TrailerStreamingService.gRPC.TrailerRequest.Parser, new[]{ "User", "MovieId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TrailerStreamingService.gRPC.TrailerReply), global::TrailerStreamingService.gRPC.TrailerReply.Parser, new[]{ "Succeeded", "Message", "Video" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TrailerStreamingService.gRPC.User), global::TrailerStreamingService.gRPC.User.Parser, new[]{ "UserName", "Password" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,8 +79,7 @@ namespace TrailerStreamingService.gRPC {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TrailerRequest(TrailerRequest other) : this() {
-      userName_ = other.userName_;
-      password_ = other.password_;
+      user_ = other.user_ != null ? other.user_.Clone() : null;
       movieId_ = other.movieId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,32 +90,20 @@ namespace TrailerStreamingService.gRPC {
       return new TrailerRequest(this);
     }
 
-    /// <summary>Field number for the "userName" field.</summary>
-    public const int UserNameFieldNumber = 1;
-    private string userName_ = "";
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 1;
+    private global::TrailerStreamingService.gRPC.User user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UserName {
-      get { return userName_; }
+    public global::TrailerStreamingService.gRPC.User User {
+      get { return user_; }
       set {
-        userName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 2;
-    private string password_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Password {
-      get { return password_; }
-      set {
-        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        user_ = value;
       }
     }
 
     /// <summary>Field number for the "movieId" field.</summary>
-    public const int MovieIdFieldNumber = 3;
+    public const int MovieIdFieldNumber = 2;
     private int movieId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +129,7 @@ namespace TrailerStreamingService.gRPC {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UserName != other.UserName) return false;
-      if (Password != other.Password) return false;
+      if (!object.Equals(User, other.User)) return false;
       if (MovieId != other.MovieId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -150,8 +138,7 @@ namespace TrailerStreamingService.gRPC {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UserName.Length != 0) hash ^= UserName.GetHashCode();
-      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (user_ != null) hash ^= User.GetHashCode();
       if (MovieId != 0) hash ^= MovieId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -171,16 +158,12 @@ namespace TrailerStreamingService.gRPC {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UserName.Length != 0) {
+      if (user_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(UserName);
-      }
-      if (Password.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Password);
+        output.WriteMessage(User);
       }
       if (MovieId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(MovieId);
       }
       if (_unknownFields != null) {
@@ -193,16 +176,12 @@ namespace TrailerStreamingService.gRPC {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UserName.Length != 0) {
+      if (user_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(UserName);
-      }
-      if (Password.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Password);
+        output.WriteMessage(User);
       }
       if (MovieId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(MovieId);
       }
       if (_unknownFields != null) {
@@ -215,11 +194,8 @@ namespace TrailerStreamingService.gRPC {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (UserName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserName);
-      }
-      if (Password.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      if (user_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
       }
       if (MovieId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(MovieId);
@@ -236,11 +212,11 @@ namespace TrailerStreamingService.gRPC {
       if (other == null) {
         return;
       }
-      if (other.UserName.Length != 0) {
-        UserName = other.UserName;
-      }
-      if (other.Password.Length != 0) {
-        Password = other.Password;
+      if (other.user_ != null) {
+        if (user_ == null) {
+          User = new global::TrailerStreamingService.gRPC.User();
+        }
+        User.MergeFrom(other.User);
       }
       if (other.MovieId != 0) {
         MovieId = other.MovieId;
@@ -261,14 +237,13 @@ namespace TrailerStreamingService.gRPC {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            UserName = input.ReadString();
+            if (user_ == null) {
+              User = new global::TrailerStreamingService.gRPC.User();
+            }
+            input.ReadMessage(User);
             break;
           }
-          case 18: {
-            Password = input.ReadString();
-            break;
-          }
-          case 24: {
+          case 16: {
             MovieId = input.ReadInt32();
             break;
           }
@@ -288,14 +263,13 @@ namespace TrailerStreamingService.gRPC {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            UserName = input.ReadString();
+            if (user_ == null) {
+              User = new global::TrailerStreamingService.gRPC.User();
+            }
+            input.ReadMessage(User);
             break;
           }
-          case 18: {
-            Password = input.ReadString();
-            break;
-          }
-          case 24: {
+          case 16: {
             MovieId = input.ReadInt32();
             break;
           }
@@ -561,6 +535,233 @@ namespace TrailerStreamingService.gRPC {
           }
           case 26: {
             Video = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class User : pb::IMessage<User>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<User> _parser = new pb::MessageParser<User>(() => new User());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<User> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TrailerStreamingService.gRPC.StreamingReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public User() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public User(User other) : this() {
+      userName_ = other.userName_;
+      password_ = other.password_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public User Clone() {
+      return new User(this);
+    }
+
+    /// <summary>Field number for the "userName" field.</summary>
+    public const int UserNameFieldNumber = 1;
+    private string userName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string UserName {
+      get { return userName_; }
+      set {
+        userName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as User);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(User other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (UserName != other.UserName) return false;
+      if (Password != other.Password) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (UserName.Length != 0) hash ^= UserName.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (UserName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserName);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (UserName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserName);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (UserName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserName);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(User other) {
+      if (other == null) {
+        return;
+      }
+      if (other.UserName.Length != 0) {
+        UserName = other.UserName;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            UserName = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            UserName = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
             break;
           }
         }

@@ -25,7 +25,7 @@ namespace TrailerStreamingService.WebSocket.Controllers
         {
             if (HttpContext.WebSockets.IsWebSocketRequest)
             {
-                FetchTrailerResponse fetchTrailerResponse = new FetchTrailerResponse() { Succeeded = true };
+                FetchTrailerResponse fetchTrailerResponse = new FetchTrailerResponse() { StatusCode = DTOs.StatusCode.Success };
 
                 using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
                 var buffer = new byte[1024 * 4];
@@ -49,10 +49,9 @@ namespace TrailerStreamingService.WebSocket.Controllers
                         var loginResponse = await client.ReceiveAsync(new ArraySegment<byte>(responseBuffer), CancellationToken.None);
                         var loginResponseJson = Encoding.UTF8.GetString(responseBuffer, 0, loginResponse.Count);
                         var loginResponseDto = JsonSerializer.Deserialize<LoginResponse>(loginResponseJson);
-                        await client.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
                        
 
-                        if (loginResponseDto.StatusCode == 200)
+                        if ((int)loginResponseDto.StatusCode == 200)
                         {
                             try
                             {
@@ -82,7 +81,7 @@ namespace TrailerStreamingService.WebSocket.Controllers
                                     }
                                     else
                                     {
-                                        fetchTrailerResponse.Succeeded = false;
+                                        fetchTrailerResponse.StatusCode = DTOs.StatusCode.NotFound;
                                         fetchTrailerResponse.Message = $"The movie trailer with movie ID = {fetchTrailerRequest.MovieId} was not found";
                                         _logger.LogInformation(fetchTrailerResponse.Message);
                                     }
@@ -91,16 +90,22 @@ namespace TrailerStreamingService.WebSocket.Controllers
                             }
                             catch(Exception ex)
                             {
-                                fetchTrailerResponse.Succeeded = false;
+                                fetchTrailerResponse.StatusCode = DTOs.StatusCode.InternalServerError;
                                 fetchTrailerResponse.Message = ex.ToString();
                                 _logger.LogError(DateTime.Now + " - Get Movie Trailer - " + ex.ToString());
                             }
                         }
-
+                        else
+                        {
+                            fetchTrailerResponse.StatusCode = loginResponseDto.StatusCode;
+                            fetchTrailerResponse.Message = loginResponseDto.Message;
+                        }
+                        await client.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
                     }
                   
                 }
-                if (fetchTrailerResponse.Succeeded)
+               
+                if ((int)fetchTrailerResponse.StatusCode==200)
                 {
                    await webSocket.SendAsync(new ArraySegment<byte>(fetchTrailerResponse.Video), WebSocketMessageType.Binary, true, CancellationToken.None);
                    await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
@@ -108,9 +113,9 @@ namespace TrailerStreamingService.WebSocket.Controllers
                 else
                 {
                     await webSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(fetchTrailerResponse))), WebSocketMessageType.Text, true, CancellationToken.None);
-                    await webSocket.CloseAsync(WebSocketCloseStatus.InternalServerError, "Closing", CancellationToken.None);
+                    await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
                 }
-             
+               
             }
             else
             {

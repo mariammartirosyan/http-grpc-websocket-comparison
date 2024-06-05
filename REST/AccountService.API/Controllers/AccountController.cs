@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AccountService.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")]
     public class AccountController : ControllerBase
     {
         private readonly Library.Services.AccountService accountService;
@@ -25,7 +25,9 @@ namespace AccountService.API.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)
         {
             var result = await accountService.Register(registerDTO);
-            if (result.StatusCode != 200)
+            int statusCode = (int)result.StatusCode;
+
+            if (statusCode != 200)
             {
                 logger.LogError($"AccountService.API - {result.Message}");
             }
@@ -34,15 +36,16 @@ namespace AccountService.API.Controllers
                 logger.LogInformation($"AccountService.API - {result.Message}");
             }
 
-            return StatusCode(result.StatusCode, result.Message);
+            return StatusCode(statusCode, result.Message);
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
             var result = await accountService.Login(loginDTO, config["JWT:Secret"]);
+            int statusCode = (int)result.StatusCode;
 
-            if (result.StatusCode != 200)
+            if (statusCode != 200)
             {
                 logger.LogError($"AccountService.API - {result.Message}");
             }
@@ -51,11 +54,11 @@ namespace AccountService.API.Controllers
                 logger.LogInformation($"AccountService.API - {result.Message}");
             }
 
-            return StatusCode(result.StatusCode, result.Message);
+            return StatusCode(statusCode, result.Message);
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("getUserDetails")]
         public async Task<IActionResult> GetUserDetails(string userName)
         {
             try

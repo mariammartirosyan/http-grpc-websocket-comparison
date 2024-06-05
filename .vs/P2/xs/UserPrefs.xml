@@ -1,103 +1,149 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{25D4C244-80EE-467D-9ABB-C3E17040C72F}|http">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>MovieService.Library/MovieService.Library.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.ItemProperties.gRPC.StatisticsService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.gRPC.MovieService.gRPC PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebSockets/WebSocketsClient/Controllers/ClientController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs">
     <Files>
-      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets" Line="1" Column="1" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/7.0.316/Microsoft.Common.CurrentVersion.targets" />
       <File FileName="Libraries/MovieService.Library/Services/MovieService.cs" />
-      <File FileName="Libraries/MovieService.Library/Domain/Movie.cs" Line="12" Column="6" />
+      <File FileName="Libraries/MovieService.Library/Domain/Movie.cs" />
       <File FileName="gRPC/MovieService.gRPC/Properties/launchSettings.json" />
       <File FileName="gRPC/MovieService.gRPC/appsettings.json" />
-      <File FileName="gRPC/MovieService.gRPC/Services/MovieManagementService.cs" Line="16" Column="6" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Services/StreamingService.cs" Line="67" Column="1" />
-      <File FileName="REST/TrailerStreamingService.API/Controllers/TrailerStreamingController.cs" Line="36" Column="110" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Program.cs" Line="1" Column="1" />
-      <File FileName="REST/StatisticsService.API/Program.cs" Line="2" Column="1" />
-      <File FileName="gRPC/StatisticsService.gRPC/Program.cs" Line="96" Column="1" />
-      <File FileName="REST/StatisticsService.API/Properties/launchSettings.json" Line="12" Column="1" />
+      <File FileName="gRPC/MovieService.gRPC/Services/MovieManagementService.cs" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Services/StreamingService.cs" Line="1" Column="1" />
+      <File FileName="REST/TrailerStreamingService.API/Controllers/TrailerStreamingController.cs" Line="30" Column="16" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Program.cs" />
+      <File FileName="REST/StatisticsService.API/Program.cs" />
+      <File FileName="gRPC/StatisticsService.gRPC/Program.cs" />
+      <File FileName="REST/StatisticsService.API/Properties/launchSettings.json" />
       <File FileName="gRPC/StatisticsService.gRPC/Properties/launchSettings.json" />
       <File FileName="gRPC/StatisticsService.gRPC/appsettings.json" />
-      <File FileName="gRPC/GrpcClient/Properties/launchSettings.json" Line="19" Column="1" />
-      <File FileName="gRPC/GrpcClient/Controllers/HomeController.cs" Line="101" Column="1" />
+      <File FileName="gRPC/GrpcClient/Properties/launchSettings.json" />
+      <File FileName="gRPC/GrpcClient/Controllers/HomeController.cs" Line="11" Column="35" />
       <File FileName="gRPC/StatisticsService.gRPC/Protos/movie.proto" />
-      <File FileName="gRPC/AccountService.gRPC/Protos/account.proto" Line="26" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/Services/AccountManagementService.cs" Line="38" Column="1" />
-      <File FileName="gRPC/AccountService.gRPC/Program.cs" Line="19" Column="1" />
-      <File FileName="REST/StatisticsService.API/Controllers/StatisticsController.cs" Line="75" Column="10" />
-      <File FileName="Libraries/AccountService.Library/Services/AccountService.cs" Line="107" Column="43" />
+      <File FileName="gRPC/AccountService.gRPC/Protos/account.proto" Line="1" Column="1" />
+      <File FileName="gRPC/AccountService.gRPC/Services/AccountManagementService.cs" Line="33" Column="10" />
+      <File FileName="gRPC/AccountService.gRPC/Program.cs" Line="15" Column="1" />
+      <File FileName="REST/StatisticsService.API/Controllers/StatisticsController.cs" Line="34" Column="59" />
+      <File FileName="Libraries/AccountService.Library/Services/AccountService.cs" Line="113" Column="55" />
       <File FileName="Libraries/StatisticsService.Library/StatisticsDbContext.cs" />
-      <File FileName="gRPC/StatisticsService.gRPC/Protos/statistics.proto" Line="11" Column="1" />
-      <File FileName="REST/AccountService.API/Controllers/AccountController.cs" Line="69" Column="52" />
-      <File FileName="gRPC/MovieService.gRPC/Protos/movie.proto" Line="15" Column="1" />
+      <File FileName="gRPC/StatisticsService.gRPC/Protos/statistics.proto" />
+      <File FileName="REST/AccountService.API/Controllers/AccountController.cs" Line="57" Column="41" />
+      <File FileName="gRPC/MovieService.gRPC/Protos/movie.proto" />
       <File FileName="gRPC/StatisticsService.gRPC/Protos/account.proto" />
-      <File FileName="Libraries/AccountService.Library/DTOs/UserDTO.cs" Line="12" Column="45" />
-      <File FileName="REST/MovieService.API/Controllers/MovieController.cs" Line="28" Column="18" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/streaming.proto" Line="17" Column="1" />
-      <File FileName="Libraries/TrailerStreamingService.Library/Services/StreamingService.cs" />
+      <File FileName="Libraries/AccountService.Library/DTOs/UserDTO.cs" Line="21" Column="1" />
+      <File FileName="REST/MovieService.API/Controllers/MovieController.cs" Line="22" Column="1" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/streaming.proto" />
+      <File FileName="Libraries/TrailerStreamingService.Library/Services/StreamingService.cs" Line="1" Column="1" />
       <File FileName="gRPC/GrpcClient/Protos/account.proto" />
       <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/statistics.proto" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/Properties/launchSettings.json" Line="8" Column="1" />
-      <File FileName="REST/TrailerStreamingService.API/Program.cs" Line="41" Column="1" />
-      <File FileName="gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" Line="82" Column="85" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/Properties/launchSettings.json" />
+      <File FileName="REST/TrailerStreamingService.API/Program.cs" />
+      <File FileName="gRPC/StatisticsService.gRPC/Services/StatisticsManagementService.cs" />
       <File FileName="Libraries/StatisticsService.Library/Services/StatisticsService.cs" />
       <File FileName="gRPC/TrailerStreamingService.gRPC/Protos/account.proto" />
-      <File FileName="gRPC/GrpcClient/Program.cs" Line="45" Column="37" />
+      <File FileName="gRPC/GrpcClient/Program.cs" Line="16" Column="34" />
       <File FileName="gRPC/GrpcClient/Protos/streaming.proto" />
       <File FileName="gRPC/GrpcClient/Protos/statistics.proto" />
-      <File FileName="gRPC/AccountService.gRPC/appsettings.json" Line="7" Column="5" />
+      <File FileName="gRPC/AccountService.gRPC/appsettings.json" />
       <File FileName="gRPC/MovieService.gRPC/Program.cs" />
       <File FileName="gRPC/TrailerStreamingService.gRPC/appsettings.json" />
-      <File FileName="REST/TrailerStreamingService.API/DTOs/TrailerDTO.cs" Line="13" Column="6" />
+      <File FileName="REST/TrailerStreamingService.API/DTOs/TrailerDTO.cs" Line="1" Column="1" />
       <File FileName="gRPC/GrpcClient/DTOs/TrailerDTO.cs" />
-      <File FileName="WebSockets/AccountService.WebSocket/Program.cs" Line="98" Column="1" />
-      <File FileName="Libraries/AccountService.Library/Domain/User.cs" Line="6" Column="18" />
-      <File FileName="WebSockets/AccountService.WebSocket/DTOs/UserDetailsRequest.cs" Line="6" Column="39" />
-      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/AddStatisticsRequest.cs" Line="11" Column="1" />
-      <File FileName="REST/MovieService.API/Properties/launchSettings.json" Line="34" Column="21" />
-      <File FileName="WebSockets/MovieService.WebSocket/Properties/launchSettings.json" Line="16" Column="47" />
-      <File FileName="WebSockets/MovieService.WebSocket/appsettings.json" Line="14" Column="1" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/appsettings.json" Line="9" Column="1" />
-      <File FileName="WebSockets/MovieService.WebSocket/Program.cs" Line="98" Column="1" />
-      <File FileName="WebSockets/MovieService.WebSocket/Controllers/MovieController.cs" Line="28" Column="1" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/Controllers/StatisticsController.cs" Line="89" Column="1" />
-      <File FileName="WebSockets/MovieService.WebSocket/DTOs/GetMovieRequest.cs" Line="7" Column="3" />
-      <File FileName="WebSockets/MovieService.WebSocket/DTOs/GetMovieReply.cs" Line="8" Column="1" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/Properties/launchSettings.json" Line="19" Column="27" />
-      <File FileName="WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" Line="58" Column="1" />
-      <File FileName="WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" Line="123" Column="1" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetMovieResponse.cs" Line="20" Column="1" />
-      <File FileName="REST/StatisticsService.API/DTOs/MovieDTO.cs" Line="1" Column="1" />
-      <File FileName="Libraries/MovieService.Library/Domain/Genre.cs" Line="12" Column="6" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetMovieRequest.cs" Line="6" Column="27" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetUserDetailsRequest.cs" Line="6" Column="31" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetUserDetailsResponse.cs" Line="21" Column="1" />
-      <File FileName="WebSockets/AccountService.WebSocket/DTOs/UserDetailsReply.cs" Line="10" Column="23" />
-      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/TrailerDTO.cs" Line="4" Column="37" />
-      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/FetchTrailerResponse.cs" Line="4" Column="38" />
-      <File FileName="gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/Protos/Streaming.cs" Line="335" Column="12" />
-      <File FileName="WebSockets/WebSocketsClient/Controllers/ClientController.cs" Line="7" Column="39" />
-      <File FileName="WebSockets/TrailerStreamingService.WebSocket/Program.cs" Line="48" Column="1" />
-      <File FileName="WebSockets/WebSocketsClient/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="WebSockets/StatisticsService.WebSocket/Program.cs" Line="97" Column="1" />
-      <File FileName="WebSockets/WebSocketsClient/Program.cs" Line="23" Column="1" />
-      <File FileName="WebSockets/AccountService.WebSocket/appsettings.json" Line="1" Column="1" />
-      <File FileName="WebSockets/AccountService.WebSocket/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="WebSockets/AccountService.WebSocket/Program.cs" Line="120" Column="1" />
+      <File FileName="Libraries/AccountService.Library/Domain/User.cs" />
+      <File FileName="WebSockets/AccountService.WebSocket/DTOs/UserDetailsRequest.cs" />
+      <File FileName="REST/MovieService.API/Properties/launchSettings.json" />
+      <File FileName="WebSockets/MovieService.WebSocket/Properties/launchSettings.json" Line="25" Column="8" />
+      <File FileName="WebSockets/MovieService.WebSocket/appsettings.json" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/appsettings.json" />
+      <File FileName="WebSockets/MovieService.WebSocket/Program.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/MovieService.WebSocket/Controllers/MovieController.cs" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/Controllers/StatisticsController.cs" Line="121" Column="25" />
+      <File FileName="WebSockets/MovieService.WebSocket/DTOs/GetMovieRequest.cs" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/Properties/launchSettings.json" Line="30" Column="2" />
+      <File FileName="WebSockets/AccountService.WebSocket/Controllers/AccountController.cs" Line="43" Column="1" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" Line="71" Column="13" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetMovieResponse.cs" />
+      <File FileName="REST/StatisticsService.API/DTOs/MovieDTO.cs" />
+      <File FileName="Libraries/MovieService.Library/Domain/Genre.cs" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetMovieRequest.cs" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetUserDetailsRequest.cs" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/DTOs/GetUserDetailsResponse.cs" />
+      <File FileName="WebSockets/AccountService.WebSocket/DTOs/UserDetailsReply.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/FetchTrailerResponse.cs" Line="6" Column="1" />
+      <File FileName="gRPC/TrailerStreamingService.gRPC/obj/Debug/net7.0/Protos/Streaming.cs" />
+      <File FileName="WebSockets/WebSocketsClient/Controllers/ClientController.cs" Line="43" Column="112" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/Program.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/WebSocketsClient/Properties/launchSettings.json" Line="15" Column="30" />
+      <File FileName="WebSockets/StatisticsService.WebSocket/Program.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/WebSocketsClient/Program.cs" />
+      <File FileName="WebSockets/AccountService.WebSocket/appsettings.json" />
+      <File FileName="WebSockets/AccountService.WebSocket/Properties/launchSettings.json" Line="20" Column="7" />
+      <File FileName="Libraries/AccountService.Library/DTOs/Response.cs" Line="13" Column="24" />
+      <File FileName="Libraries/AccountService.Library/DTOs/LoginDTO.cs" Line="1" Column="1" />
+      <File FileName="Libraries/AccountService.Library/DTOs/RegisterDTO.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/LoginResponse.cs" Line="8" Column="6" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/DTOs/StatusCode.cs" Line="11" Column="6" />
+      <File FileName="WebSockets/TrailerStreamingService.WebSocket/Properties/launchSettings.json" Line="13" Column="32" />
+      <File FileName="WebSockets/WebSocketsClient/DTOs/TrailerDTO.cs" Line="1" Column="1" />
+      <File FileName="WebSockets/WebSocketsClient/DTOs/EmptyEnumeration.cs" Line="4" Column="27" />
+      <File FileName="WebSockets/WebSocketsClient/DTOs/FetchTrailerResponse.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="P2" expanded="True" />
+          <Node name="P2">
+            <Node name="gRPC" expanded="True">
+              <Node name="AccountService.gRPC">
+                <Node name="Protos" expanded="True" />
+              </Node>
+              <Node name="TrailerStreamingService.gRPC" expanded="True">
+                <Node name="Services" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="WebSockets" expanded="True">
+              <Node name="AccountService.WebSocket" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="DTOs" expanded="True" />
+              </Node>
+              <Node name="StatisticsService.WebSocket" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Properties" expanded="True" />
+              </Node>
+              <Node name="TrailerStreamingService.WebSocket" expanded="True">
+                <Node name="Dependencies" expanded="True">
+                  <Node name="ProjectDependencies" expanded="True" />
+                </Node>
+                <Node name="Controllers" expanded="True" />
+                <Node name="DTOs" expanded="True" />
+                <Node name="Properties" expanded="True" />
+              </Node>
+              <Node name="WebSocketsClient">
+                <Node name="Controllers" expanded="True" />
+                <Node name="DTOs" expanded="True" />
+                <Node name="Properties" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>ff</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <DisabledProjects>
-    <String>MovieService.Library/MovieService.Library.csproj</String>
-  </DisabledProjects>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" relfile="WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" line="52" column="1" />
+      <Breakpoint file="/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" relfile="WebSockets/TrailerStreamingService.WebSocket/Controllers/TrailerController.cs" line="111" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>

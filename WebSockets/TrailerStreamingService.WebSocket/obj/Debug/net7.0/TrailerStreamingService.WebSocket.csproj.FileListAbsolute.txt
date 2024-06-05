@@ -25,6 +25,14 @@
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/TrailerStreamingService.WebSocket.runtimeconfig.json
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/TrailerStreamingService.WebSocket.dll
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/TrailerStreamingService.WebSocket.pdb
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/TrailerStreamingService.Library.dll
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/TrailerStreamingService.Library.pdb
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/obj/Debug/net7.0/TrailerStreamingService.WebSocket.csproj.AssemblyReference.cache
@@ -47,11 +55,3 @@
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/obj/Debug/net7.0/TrailerStreamingService.WebSocket.pdb
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/obj/Debug/net7.0/TrailerStreamingService.WebSocket.genruntimeconfig.cache
 /Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/obj/Debug/net7.0/ref/TrailerStreamingService.WebSocket.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
-/Users/mariammartirosyan/Desktop/P2/P2/WebSockets/TrailerStreamingService.WebSocket/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

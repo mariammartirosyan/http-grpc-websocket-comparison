@@ -1,4 +1,5 @@
 ﻿using System.Net.WebSockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
@@ -32,11 +33,23 @@ namespace WebSocketsClient.Controllers
                 await client.SendAsync(new ArraySegment<byte>(byteArray), WebSocketMessageType.Text, true, CancellationToken.None);
                 var responseBuffer = new byte[8192 * 2000];
                 var response = await client.ReceiveAsync(new ArraySegment<byte>(responseBuffer), CancellationToken.None);
+                if (response.MessageType == WebSocketMessageType.Binary)
+                {
+                    await client.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+                    return File(responseBuffer, "video/mp4");
+                }
+
+                var responseJson = Encoding.UTF8.GetString(responseBuffer, 0, response.Count);
+                _logger.LogInformation(responseJson);
+                var fetchTrailerResponse = JsonSerializer.Deserialize<FetchTrailerResponse>(responseJson);
 
                 await client.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
-                return File(responseBuffer, "video/mp4");
+                
+
+                return StatusCode((int)fetchTrailerResponse.StatusCode, fetchTrailerResponse.Message);
             }
         }
+        
     }
 }
 

@@ -10,9 +10,8 @@ using TrailerStreamingService.Library.Services;
 
 namespace TrailerStreamingService.API.Controllers
 {
-    //[Authorize]
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")]
     public class TrailerController : ControllerBase
     {
         private readonly StreamingService _streamingService;
@@ -25,7 +24,7 @@ namespace TrailerStreamingService.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpPost("fetchTrailer")]
         public async Task<IActionResult> GetMovieTrailer(TrailerDTO trailerDTO)
         {
             try
@@ -33,7 +32,8 @@ namespace TrailerStreamingService.API.Controllers
                 HttpClient client = new HttpClient();
                 var content = JsonSerializer.Serialize(trailerDTO.User);
                 var httpContent = new StringContent(content, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(Environment.GetEnvironmentVariable("AccountServiceUrl")+"/Account/login", httpContent);
+                //var response = await client.PostAsync(Environment.GetEnvironmentVariable("AccountServiceUrl")+"/Account/login", httpContent);
+                var response = await client.PostAsync(Environment.GetEnvironmentVariable("AccountServiceUrl") + "/login", httpContent);
                 var responseMsg = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
@@ -41,8 +41,8 @@ namespace TrailerStreamingService.API.Controllers
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                     content = JsonSerializer.Serialize(new { UserName = trailerDTO.User.UserName, MovieId = trailerDTO.MovieId });
                     httpContent = new StringContent(content, Encoding.UTF8, "application/json");
-                    response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl")+ "/Statistics", httpContent);
-
+                    //response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl")+ "/Statistics", httpContent);
+                    response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl") + "/addStatisticsEntry", httpContent); 
 
                     _logger.LogInformation($"Request for movie ID = {trailerDTO.MovieId} is being processed");
                     var fileStream = _streamingService.GetMovieTrailer(trailerDTO.MovieId);

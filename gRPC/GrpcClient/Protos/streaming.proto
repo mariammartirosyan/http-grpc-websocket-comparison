@@ -9,13 +9,17 @@ service Streaming {
 }
 
 message TrailerRequest {
-  string userName = 1;
-  string password = 2;
-  int32 movieId =3;
+  User user = 1;
+  int32 movieId =2;
 }
 
 message TrailerReply {
   bool succeeded = 1;
   string message = 2;
   bytes video = 3;
+}
+
+message User{
+  string userName = 1;
+  string password = 2;
 }

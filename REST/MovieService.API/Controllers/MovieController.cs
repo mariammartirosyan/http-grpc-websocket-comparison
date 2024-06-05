@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieService.Library.DTOs;
-using MovieService.Library.Repositories;
 
 namespace MovieService.API.Controllers
 {
@@ -12,15 +11,11 @@ namespace MovieService.API.Controllers
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
-        private readonly MovieRepository movieRepository;
-        private readonly GenreRepository genreRepository;
         private readonly Library.Services.MovieService movieService;
         private readonly ILogger<MovieController> logger;
 
-        public MovieController(MovieRepository movieRepository, GenreRepository genreRepository, Library.Services.MovieService movieService, ILogger<MovieController> logger)
+        public MovieController(Library.Services.MovieService movieService, ILogger<MovieController> logger)
         {
-            this.movieRepository = movieRepository;
-            this.genreRepository = genreRepository;
             this.movieService = movieService;
             this.logger = logger;
         }
@@ -30,8 +25,8 @@ namespace MovieService.API.Controllers
         {
             try
             {
-                var movies = movieRepository.GetAll();
-               
+                var movies = movieService.GetAllMovies();
+
                 if (movies != null)
                 {
                     return Content(JsonSerializer.Serialize(movies), "application/json");
@@ -50,7 +45,7 @@ namespace MovieService.API.Controllers
         { 
             try
             {
-                var movie = movieRepository.GetById(id);
+                var movie = movieService.GetMovieById(id);
 
                 if (movie != null)
                 {

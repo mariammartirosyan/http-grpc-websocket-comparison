@@ -10,7 +10,7 @@ namespace StatisticsService.API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    //[Route("[controller]")]
     public class StatisticsController : ControllerBase
     {
         private readonly Library.Services.StatisticsService statisticService;
@@ -21,7 +21,7 @@ namespace StatisticsService.API.Controllers
             this.statisticService = statisticService;
             this.logger = logger;
         }
-        [HttpPost]
+        [HttpPost("addStatisticsEntry")]
         public async Task<IActionResult> Add(InsertStatisticsDTO statisticsDTO)
         {
             try
@@ -34,7 +34,7 @@ namespace StatisticsService.API.Controllers
                 var headers = HttpContext.Request.Headers;
                 var accountServiceTask = Task.Run(async () =>
                 {
-                    accountServiceResponse = await HttpRequestHelper.SendGetRequest($"{accountServiceUrl}/account?userName={statisticsDTO.UserName}", headers);
+                    accountServiceResponse = await HttpRequestHelper.SendGetRequest($"{accountServiceUrl}/getUserDetails?userName={statisticsDTO.UserName}", headers);
                 });
 
                 var movieServiceTask = Task.Run(async () =>

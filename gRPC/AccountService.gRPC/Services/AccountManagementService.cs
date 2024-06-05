@@ -26,7 +26,7 @@ namespace AccountService.gRPC.Services
 
             return await Task.FromResult(new LoginReply
             {
-                Succeeded = (result.StatusCode == 200),
+                Succeeded = (result.StatusCode == Library.DTOs.StatusCode.Success),
                 Message = result.Message,
                 Token = result.Message
             });
