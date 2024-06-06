@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  accountservice.api:
+    image: ${DOCKER_REGISTRY-}accountservice
+    build:
+      context: .
+      dockerfile: REST/AccountService.API/Dockerfile
+
+  movieservice.api:
+    image: ${DOCKER_REGISTRY-}movieservice
+    build:
+      context: .
+      dockerfile: REST/MovieService.API/Dockerfile
+
