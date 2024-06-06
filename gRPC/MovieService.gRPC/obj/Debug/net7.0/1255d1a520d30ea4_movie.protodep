@@ -1,2 +1,0 @@
-obj/Debug/net7.0/Protos/Movie.cs \
-obj/Debug/net7.0/Protos/MovieGrpc.cs: Protos/movie.proto
