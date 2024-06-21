@@ -9,7 +9,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "AccountServiceUrl": "https://localhost:7246",
         "MovieServiceUrl": "https://localhost:7181",
-        "DefaultConnection": "Server=127.0.0.1;Database=P2StasticsDB;User ID=root;Password=pass;Port=3306"
+        "DefaultConnection": "Server=db;Database=TrailerStreamingSystemDB;User ID=root;Password=pass;Port=3306",
+        "Server": "/cloudsql/trailerstreaming:us-central1:trailer-streaming-system-db",
+        "Database": "TrailerStreamingSystemDB",
+        "UserID": "root",
+        "Password": "pass",
+        "Port": "3306"
       },
       "dotnetRunMessages": true
     },

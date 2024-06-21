@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  account-service:
+    image: mariammartirosyan/account-service-rest:latest
+    ports:
+      - "8001:80"
+    depends_on:
+      - db
+    environment:
+      - DefaultConnection=Server=db;Database=TrailerStreamingSystemDB;User ID=root;Password=pass;Port=3306
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Platform=GKE
+      - Server=db
+      - Database=TrailerStreamingSystemDB
+      - UserID=root
+      - Password=pass
+      - Port=3306
+    networks:
+      - my-network
+
+  movie-service:
+    image: mariammartirosyan/movie-service-rest:latest
+    ports:
+      - "8002:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Platform=GKE
+      - Server=db
+      - Database=TrailerStreamingSystemDB
+      - UserID=root
+      - Password=pass
+      - Port=3306
+    networks:
+      - my-network
+
+  statistics-service:
+    image: mariammartirosyan/statistics-service-rest:latest
+    ports:
+      - "8003:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - AccountServiceUrl=http://account-service:80
+      - MovieServiceUrl=http://movie-service:80
+      - Platform=GKE
+      - Server=db
+      - Database=TrailerStreamingSystemDB
+      - UserID=root
+      - Password=pass
+      - Port=3306
+    networks:
+      - my-network
+
+  trailer-streaming-service:
+    image: mariammartirosyan/trailer-streaming-service-rest:latest
+    ports:
+      - "8004:80"
+    environment:
+      - AccountServiceUrl=http://account-service:80
+      - StatisticsServiceUrl=http://statistics-service:80
+    networks:
+      - my-network   
+
+  db:
+    restart: unless-stopped
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: TrailerStreamingSystemDB
+      MYSQL_ROOT_PASSWORD: pass
+    networks:
+      - my-network
+
+networks:
+    my-network:
+      driver: bridge

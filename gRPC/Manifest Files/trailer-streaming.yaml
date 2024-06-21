@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trailer-streaming-grpc-deployment
+spec:
+  selector:
+    matchLabels:
+      service: trailer-streaming-grpc
+  template:
+    metadata:
+      labels:
+        service: trailer-streaming-grpc
+    spec:
+      containers:
+      - name: trailer-streaming-grpc
+        image: mariammartirosyan/trailer-streaming-service-grpc:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: AccountServiceUrl
+          value: http://account-service-grpc:8085    
+        - name: StatisticsServiceUrl
+          value: http://statistics-service-grpc:8083                               
+        # resources:
+        #   limits:
+        #     cpu: "0.5"    
+        #     memory: "500Mi"
+        #   requests:
+        #     memory: "300Mi"
+        #     cpu: "0.2"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trailer-streaming-grpc
+  namespace: default
+  labels:
+    service: trailer-streaming-grpc
+spec:
+  selector:
+    service: trailer-streaming-grpc
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8084 
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: trailer-streaming-grpc-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: trailer-streaming-grpc
+#   minReplicas: 1
+#   maxReplicas: 10
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50

@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: client-grpc-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  # - http:
+  #     paths:
+  #     - path: /account(/|$)(.*)
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: account
+  #           port:
+  #             number: 80
+  # - http:
+  #     paths:
+  #     - path: /movie(/|$)(.*)
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: movie
+  #           port:
+  #             number: 80
+  - http:
+      paths:
+      - path: /client-grpc(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: client-grpc
+            port:
+              number: 80

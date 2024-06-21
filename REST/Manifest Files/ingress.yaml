@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: trailer-streaming-system-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  # - http:
+  #     paths:
+  #     - path: /account(/|$)(.*)
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: account
+  #           port:
+  #             number: 80
+  # - http:
+  #     paths:
+  #     - path: /movie(/|$)(.*)
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: movie
+  #           port:
+  #             number: 80
+  - http:
+      paths:
+      - path: /trailer-streaming-rest(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: trailer-streaming-rest
+            port:
+              number: 80

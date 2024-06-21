@@ -7,6 +7,7 @@ using Microsoft.VisualBasic;
 using AccountService.Library.Constants;
 using AccountService.Library.CsvHelpers;
 using AccountService.Library.DTOs;
+using Microsoft.Extensions.Logging;
 
 namespace AccountService.Library
 {
@@ -15,13 +16,15 @@ namespace AccountService.Library
         public UserDbContext(DbContextOptions<UserDbContext> options)
             : base(options)
         {
-
+           
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
-        //    optionsBuilder.LogTo(Console.WriteLine);
+        //    var logger = _loggerFactory.CreateLogger<UserDbContext>();
+        //    optionsBuilder.LogTo(log => logger.LogError(log));
 
         //    var dbConnectionString = "Server=127.0.0.1;Database=P2AccountDB;User ID=root;Password=pass;Port=3306";
+        //    dbConnectionString = "Server=db;Database=TrailerStreamingSystemDB;User ID=root;Password=pass;Port=3306";
         //    optionsBuilder.UseMySql(dbConnectionString, new MySqlServerVersion(ServerVersion.AutoDetect(dbConnectionString)));
         //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -57,7 +60,7 @@ namespace AccountService.Library
             var usersPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Seed Data", "Users.csv");
             var usersData = CsvDataReader<UserDTO, UserMapping>.GetData(usersPath);
 
-            foreach(var userDTO in usersData)
+            foreach (var userDTO in usersData)
             {
                 var user = new User
                 {
@@ -77,11 +80,10 @@ namespace AccountService.Library
 
                 modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
                 {
-                    RoleId = userDTO.Role == "Admin"? adminRoleId: userRoleId,
+                    RoleId = userDTO.Role == "Admin" ? adminRoleId : userRoleId,
                     UserId = user.Id
                 });
             }
-
         }
 
     }

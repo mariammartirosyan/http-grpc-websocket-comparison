@@ -70,10 +70,15 @@ public class StatisticsManagementService : StatisticsManagement.StatisticsManage
                         DateTime = dateTime
                     });
                 }
+                reply.Message = "Statistics entry was added";
+                _logger.LogInformation(DateTime.Now + " - " + reply.Message);
             }
-
-            reply.Message = "Statistics entry was added";
-            _logger.LogInformation(DateTime.Now + " - " + reply.Message);
+            else
+            {
+                _logger.LogError($@"Statistics Entry was not added.
+                        MovieService: Succeeded - {movieDetailsReply.Succeeded}, Reply - {movieDetailsReply.Message},
+                        AccountService: Succeeded - {userDetailsReply.Succeeded}, Reply - {userDetailsReply.Message}");
+            }
         }
         catch (Exception ex)
         {

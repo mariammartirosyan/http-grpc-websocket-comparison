@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-service-grpc-deployment
+spec:
+  selector:
+    matchLabels:
+      service: movie-service-grpc
+  template:
+    metadata:
+      labels:
+        service: movie-service-grpc
+    spec:
+      containers:
+      - name: movie-service-grpc
+        image: mariammartirosyan/movie-service-grpc:latest
+        ports:
+        - containerPort: 80
+        env:
+        # - name: DefaultConnection 
+        #   value: Server=trailer-streaming-db;Database=TrailerStreamingSystemDB;User ID=root;Password=pass;Port=3307
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: Platform
+          value: GKE
+        - name: Server
+          value: trailer-streaming-db
+        - name: Database
+          value: TrailerStreamingSystemDB
+        - name: UserID
+          value: root
+        - name: Password
+          value: pass    
+        - name: Port
+          value: "3307"                          
+        # resources:
+        #   limits:
+        #     cpu: "0.3"    
+        #     memory: "120Mi"
+        #   requests:
+        #     memory: "60Mi"
+        #     cpu: "0.1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-service-grpc
+  namespace: default
+  labels:
+    service: movie-service-grpc
+spec:
+  selector:
+    service: movie-service-grpc
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8082  
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: movie-service-grpc-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: movie-service-grpc
+#   minReplicas: 1
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50

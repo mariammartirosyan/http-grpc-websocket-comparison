@@ -89,7 +89,6 @@ using (var scope = app.Services.CreateScope())
 {
     try
     {
-        //scope.ServiceProvider.GetRequiredService<MovieDbContext>().Database.Migrate();
         scope.ServiceProvider.GetRequiredService<MovieDbContext>().Database.EnsureCreated();
     }
     catch (Exception ex)

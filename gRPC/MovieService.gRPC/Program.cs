@@ -86,6 +86,21 @@ builder.Services.AddScoped<MovieService.Library.Services.MovieService>();
 
 var app = builder.Build();
 
+
+// Automatic Database Migration
+using (var scope = app.Services.CreateScope())
+{
+    try
+    {
+        //scope.ServiceProvider.GetRequiredService<MovieDbContext>().Database.Migrate();
+        scope.ServiceProvider.GetRequiredService<MovieDbContext>().Database.EnsureCreated();
+    }
+    catch (Exception ex)
+    {
+        logger.LogError($"An error occurred while creating the database: {ex}");
+    }
+}
+
 app.UseAuthentication();
 app.UseAuthorization();
 

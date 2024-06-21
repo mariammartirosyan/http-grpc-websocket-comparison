@@ -1,6 +1,74 @@
-version: '3.4'
+version: '3.8'
 
 services:
+  account-service:
+    image: mariammartirosyan/account-service:latest
+    ports:
+      - "8001:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Platform=GKE
+      - Server=db
+      - Database=TrailerStreamingSystemDB
+      - UserID=root
+      - Password=pass
+      - Port=3306
+    networks:
+      - my-network
+  # accountdb:
+  #   image: mysql:8.0
+  #   ports:
+  #     - "3308:3307"
+  #   environment:
+  #     MYSQL_DATABASE: P1_AccountDB
+  #     MYSQL_ROOT_PASSWORD: pass
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   networks:
+  #     - my-network
+  movie-service:
+    image: mariammartirosyan/movie-service:latest
+    ports:
+      - "8002:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Platform=GKE
+      - Server=db
+      - Database=TrailerStreamingSystemDB
+      - UserID=root
+      - Password=pass
+      - Port=3306
+    networks:
+      - my-network
+  db:
+    restart: unless-stopped
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: TrailerStreamingSystemDB
+      MYSQL_ROOT_PASSWORD: pass
+    # volumes:
+    #   - db_data:/var/lib/mysql
+    # expose:
+    #   - '3307'   
+    networks:
+      - my-network
+  trailer-streaming-service:
+    image: mariammartirosyan/trailer-streaming-service:latest
+    ports:
+      - "8003:80"
+    environment:
+      - MovieServiceUrl=http://movie-service:80
+    networks:
+      - my-network 
+# volumes:
+#   db_data:
   accountservice.api:
     image: ${DOCKER_REGISTRY-}accountservice
     build:
@@ -12,4 +80,66 @@ services:
     build:
       context: .
       dockerfile: REST/MovieService.API/Dockerfile
+
+  statisticsservice.api:
+    image: ${DOCKER_REGISTRY-}statisticsservice
+    build:
+      context: .
+      dockerfile: REST/StatisticsService.API/Dockerfile
+
+  trailerstreamingservice.api:
+    image: ${DOCKER_REGISTRY-}trailerstreamingservice
+    build:
+      context: .
+      dockerfile: REST/TrailerStreamingService.API/Dockerfile
+
+  accountservice.grpc:
+    image: ${DOCKER_REGISTRY-}accountservice
+    build:
+      context: .
+      dockerfile: gRPC/AccountService.gRPC/Dockerfile
+
+  grpcclient:
+    image: ${DOCKER_REGISTRY-}grpcclient
+    build:
+      context: .
+      dockerfile: gRPC/GrpcClient/Dockerfile
+
+  movieservice.grpc:
+    image: ${DOCKER_REGISTRY-}movieservice
+    build:
+      context: .
+      dockerfile: gRPC/MovieService.gRPC/Dockerfile
+
+  statisticsservice.grpc:
+    image: ${DOCKER_REGISTRY-}statisticsservice
+    build:
+      context: .
+      dockerfile: gRPC/StatisticsService.gRPC/Dockerfile
+
+  trailerstreamingservice.grpc:
+    image: ${DOCKER_REGISTRY-}trailerstreamingservice
+    build:
+      context: .
+      dockerfile: gRPC/TrailerStreamingService.gRPC/Dockerfile
+
+  accountservice.websocket:
+    image: ${DOCKER_REGISTRY-}accountservice
+    build:
+      context: .
+      dockerfile: WebSockets/AccountService.WebSocket/Dockerfile
+
+networks:
+    my-network:
+      driver: bridge
+
+
+
+
+
+
+
+
+
+
 

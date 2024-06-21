@@ -3,21 +3,20 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["REST/MovieService.API/MovieService.API.csproj", "REST/MovieService.API/"]
+COPY ["gRPC/MovieService.gRPC/MovieService.gRPC.csproj", "gRPC/MovieService.gRPC/"]
 COPY ["Libraries/MovieService.Library/MovieService.Library.csproj", "Libraries/MovieService.Library/"]
-RUN dotnet restore "REST/MovieService.API/MovieService.API.csproj"
+RUN dotnet restore "gRPC/MovieService.gRPC/MovieService.gRPC.csproj"
 COPY . .
-WORKDIR "/src/REST/MovieService.API"
-RUN dotnet build "MovieService.API.csproj" -c Release -o /app/build
+WORKDIR "/src/gRPC/MovieService.gRPC"
+RUN dotnet build "MovieService.gRPC.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "MovieService.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "MovieService.gRPC.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MovieService.API.dll"]
+ENTRYPOINT ["dotnet", "MovieService.gRPC.dll"]

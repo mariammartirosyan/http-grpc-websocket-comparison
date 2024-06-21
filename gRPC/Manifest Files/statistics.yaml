@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistics-service-grpc-deployment
+spec:
+  selector:
+    matchLabels:
+      service: statistics-service-grpc
+  template:
+    metadata:
+      labels:
+        service: statistics-service-grpc
+    spec:
+      containers:
+      - name: statistics-service-grpc
+        image: mariammartirosyan/statistics-service-grpc:latest
+        ports:
+        - containerPort: 80
+        env:
+        # - name: DefaultConnection 
+        #   value: Server=trailer-streaming-db;Database=TrailerStreamingSystemDB;User ID=root;Password=pass;Port=3307
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: Platform
+          value: GKE
+        - name: Server
+          value: trailer-streaming-db
+        - name: Database
+          value: TrailerStreamingSystemDB
+        - name: UserID
+          value: root
+        - name: Password
+          value: pass    
+        - name: Port
+          value: "3307" 
+        - name: AccountServiceUrl
+          value: http://account-service-grpc:8085    
+        - name: MovieServiceUrl
+          value: http://movie-service-grpc:8082                           
+        # resources:
+        #   limits:
+        #     cpu: "0.3"    
+        #     memory: "200Mi"
+        #   requests:
+        #     memory: "100Mi"
+        #     cpu: "0.1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: statistics-service-grpc
+  namespace: default
+  labels:
+    service: statistics-service-grpc
+spec:
+  selector:
+    service: statistics-service-grpc
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8083  
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: statistics-service-grpc-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: statistics-service-grpc
+#   minReplicas: 1
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50
