@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-db-deployment
+spec:
+  selector:
+    matchLabels:
+      service: movie-db
+  # replicas: 2
+  template:
+    metadata:
+      labels:
+        service: movie-db
+    spec:
+      containers:
+      - name: movie-db
+        image: mysql:8.0
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_HOST
+          value: "%"        
+        - name: MYSQL_DATABASE
+          value: MovieDB
+        - name: MYSQL_ROOT_PASSWORD
+          value: pass                         
+        # resources:
+        #   limits:
+        #     cpu: "0.2"    
+        #     memory: "550Mi"
+        #   requests:
+        #     memory: "400Mi"
+        #     cpu: "0.1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-db
+  namespace: default
+  labels:
+    service: movie-db
+spec:
+  selector:
+    service: movie-db
+  ports:
+    - protocol: TCP
+      targetPort: 3306 
+      port: 3309
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: movie-db-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: movie-db
+#   minReplicas: 1
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50

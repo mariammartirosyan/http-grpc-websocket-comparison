@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-web-sockets-deployment
+spec:
+  selector:
+    matchLabels:
+      service: client-web-sockets
+  template:
+    metadata:
+      labels:
+        service: client-web-sockets
+    spec:
+      containers:
+      - name: client-web-sockets
+        image: mariammartirosyan/client-web-sockets:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: TrailerStreamingServiceUrl
+          value: ws://trailer-streaming-web-socket:8084                        
+        # resources:
+        #   limits:
+        #     cpu: "0.3"    
+        #     memory: "200Mi"
+        #   requests:
+        #     memory: "100Mi"
+        #     cpu: "0.1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-web-sockets
+  namespace: default
+  labels:
+    service: client-web-sockets
+spec:
+  selector:
+    service: client-web-sockets
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8081  
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: client-web-sockets-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: client-web-sockets
+#   minReplicas: 1
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50

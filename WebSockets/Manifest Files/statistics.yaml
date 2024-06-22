@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: account-service-grpc-deployment
+  name: statistics-service-web-socket-deployment
 spec:
   selector:
     matchLabels:
-      service: account-service-grpc
+      service: statistics-service-web-socket
   template:
     metadata:
       labels:
-        service: account-service-grpc
+        service: statistics-service-web-socket
     spec:
       containers:
-      - name: account-service-grpc
-        image: mariammartirosyan/account-service-grpc:latest
+      - name: statistics-service-web-socket
+        image: mariammartirosyan/statistics-service-web-socket:latest
         ports:
         - containerPort: 80
         env:
@@ -24,15 +24,19 @@ spec:
         - name: Platform
           value: GKE
         - name: Server
-          value: account-db
+          value: statistics-db
         - name: Database
-          value: AccountDB
+          value: StatisticsDB
         - name: UserID
           value: root
         - name: Password
           value: pass    
         - name: Port
-          value: "3310"                           
+          value: "3308" 
+        - name: AccountServiceUrl
+          value: ws://account-service-web-socket:8085    
+        - name: MovieServiceUrl
+          value: ws://movie-service-web-socket:8082                           
         # resources:
         #   limits:
         #     cpu: "0.3"    
@@ -44,27 +48,27 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: account-service-grpc
+  name: statistics-service-web-socket
   namespace: default
   labels:
-    service: account-service-grpc
+    service: statistics-service-web-socket
 spec:
   selector:
-    service: account-service-grpc
+    service: statistics-service-web-socket
   ports:
     - protocol: TCP
       targetPort: 80 
-      port: 8085  
+      port: 8083  
 # ---
 # apiVersion: autoscaling/v2
 # kind: HorizontalPodAutoscaler
 # metadata:
-#   name: account-service-grpc-hpa
+#   name: statistics-service-web-socket-hpa
 # spec:
 #   scaleTargetRef:
 #     apiVersion: apps/v1
 #     kind: Deployment
-#     name: account-service-grpc
+#     name: statistics-service-web-socket
 #   minReplicas: 1
 #   maxReplicas: 5
 #   metrics:

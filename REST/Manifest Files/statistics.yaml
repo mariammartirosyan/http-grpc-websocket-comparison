@@ -17,22 +17,22 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: DefaultConnection 
-          value: Server=statistics-db;Database=StatisticsDB;User ID=root;Password=pass;Port=3308
-        # - name: ASPNETCORE_ENVIRONMENT
-        #   value: Production
-        # - name: Platform
-        #   value: GKE
-        # - name: Server
-        #   value: trailer-streaming-db
-        # - name: Database
-        #   value: TrailerStreamingSystemDB
-        # - name: UserID
-        #   value: root
-        # - name: Password
-        #   value: pass    
-        # - name: Port
-        #   value: "3307" 
+        # - name: DefaultConnection 
+        #   value: Server=statistics-db;Database=StatisticsDB;User ID=root;Password=pass;Port=3308
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: Platform
+          value: GKE
+        - name: Server
+          value: statistics-db
+        - name: Database
+          value: StatisticsDB
+        - name: UserID
+          value: root
+        - name: Password
+          value: pass    
+        - name: Port
+          value: "3308" 
         - name: AccountServiceUrl
           value: http://account-service-rest:8081    
         - name: MovieServiceUrl

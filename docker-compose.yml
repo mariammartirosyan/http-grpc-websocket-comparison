@@ -129,9 +129,37 @@ services:
       context: .
       dockerfile: WebSockets/AccountService.WebSocket/Dockerfile
 
+  movieservice.websocket:
+    image: ${DOCKER_REGISTRY-}movieservice
+    build:
+      context: .
+      dockerfile: WebSockets/MovieService.WebSocket/Dockerfile
+
+  statisticsservice.websocket:
+    image: ${DOCKER_REGISTRY-}statisticsservice
+    build:
+      context: .
+      dockerfile: WebSockets/StatisticsService.WebSocket/Dockerfile
+
+  trailerstreamingservice.websocket:
+    image: ${DOCKER_REGISTRY-}trailerstreamingservice
+    build:
+      context: .
+      dockerfile: WebSockets/TrailerStreamingService.WebSocket/Dockerfile
+
+  websocketsclient:
+    image: ${DOCKER_REGISTRY-}websocketsclient
+    build:
+      context: .
+      dockerfile: WebSockets/WebSocketsClient/Dockerfile
+
 networks:
     my-network:
       driver: bridge
+
+
+
+
 
 
 

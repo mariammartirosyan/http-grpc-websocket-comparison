@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: account-service-grpc-deployment
+  name: account-service-web-socket-deployment
 spec:
   selector:
     matchLabels:
-      service: account-service-grpc
+      service: account-service-web-socket
   template:
     metadata:
       labels:
-        service: account-service-grpc
+        service: account-service-web-socket
     spec:
       containers:
-      - name: account-service-grpc
-        image: mariammartirosyan/account-service-grpc:latest
+      - name: account-service-web-socket
+        image: mariammartirosyan/account-service-web-socket:latest
         ports:
         - containerPort: 80
         env:
@@ -44,13 +44,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: account-service-grpc
+  name: account-service-web-socket
   namespace: default
   labels:
-    service: account-service-grpc
+    service: account-service-web-socket
 spec:
   selector:
-    service: account-service-grpc
+    service: account-service-web-socket
   ports:
     - protocol: TCP
       targetPort: 80 
@@ -59,12 +59,12 @@ spec:
 # apiVersion: autoscaling/v2
 # kind: HorizontalPodAutoscaler
 # metadata:
-#   name: account-service-grpc-hpa
+#   name: account-service-web-socket-hpa
 # spec:
 #   scaleTargetRef:
 #     apiVersion: apps/v1
 #     kind: Deployment
-#     name: account-service-grpc
+#     name: account-service-web-socket
 #   minReplicas: 1
 #   maxReplicas: 5
 #   metrics:

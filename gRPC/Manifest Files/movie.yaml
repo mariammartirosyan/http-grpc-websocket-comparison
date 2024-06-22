@@ -24,15 +24,15 @@ spec:
         - name: Platform
           value: GKE
         - name: Server
-          value: trailer-streaming-db
+          value: movie-db
         - name: Database
-          value: TrailerStreamingSystemDB
+          value: MovieDB
         - name: UserID
           value: root
         - name: Password
           value: pass    
         - name: Port
-          value: "3307"                          
+          value: "3309"                         
         # resources:
         #   limits:
         #     cpu: "0.3"    
