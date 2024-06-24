@@ -149,3 +149,10 @@ services:
     ports:
       - "80"
 
+
+  testapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

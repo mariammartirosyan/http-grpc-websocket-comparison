@@ -36,3 +36,15 @@ spec:
             name: trailer-streaming-rest
             port:
               number: 80
+  # - http:
+  #     paths:
+  #     - path: /test-app(/|$)(.*)
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: test-app
+  #           port:
+  #             number: 80
+
+
+              

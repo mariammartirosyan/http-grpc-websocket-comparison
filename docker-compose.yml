@@ -153,9 +153,16 @@ services:
       context: .
       dockerfile: WebSockets/WebSocketsClient/Dockerfile
 
+  testapp:
+    image: ${DOCKER_REGISTRY-}testapp
+    build:
+      context: .
+      dockerfile: TestApp/Dockerfile
+
 networks:
     my-network:
       driver: bridge
+
 
 
 

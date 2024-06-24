@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Prometheus;
+using System.Diagnostics;
 using System.Text;
 using TrailerStreamingService.Library.Services;
 
@@ -51,6 +53,37 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// measure response time and data transfer
+app.Use(async (context, next) =>
+{
+    var stopwatch = Stopwatch.StartNew();
+    var originalBodyStream = context.Response.Body;
+    await using var responseBody = new MemoryStream();
+    context.Response.Body = responseBody;
+
+    try
+    {
+        await next.Invoke();
+    }
+    finally
+    {
+        stopwatch.Stop();
+        var elapsedMilliseconds = stopwatch.Elapsed.TotalMilliseconds;
+
+        Metrics.CreateHistogram("http_response_time_seconds", "Response time in seconds")
+            .Observe(elapsedMilliseconds / 1000);
+
+        responseBody.Seek(0, SeekOrigin.Begin);
+        var responseText = await new StreamReader(responseBody).ReadToEndAsync();
+        responseBody.Seek(0, SeekOrigin.Begin);
+        await responseBody.CopyToAsync(originalBodyStream);
+
+        Metrics.CreateCounter("http_response_size_bytes", "Response size in bytes")
+            .Inc(responseBody.Length);
+    }
+});
+
+app.UseMetricServer("/metrics");
 
 app.UseAuthentication();
 app.UseAuthorization();

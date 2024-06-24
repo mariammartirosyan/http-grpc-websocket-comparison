@@ -23,6 +23,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.31" />
+    <PackageReference Include="prometheus-net" Version="6.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="6.0.0" />
+    <PackageReference Include="prometheus-net.AspNetCore.Grpc" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-deployment
+spec:
+  selector:
+    matchLabels:
+      service: test-app
+  template:
+    metadata:
+      labels:
+        service: test-app
+    spec:
+      containers:
+      - name: test-app
+        image: mariammartirosyan/test-app:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: RestEntryPointUrl
+          value: http://trailer-streaming-rest:8084/fetchTrailer
+        - name: GrpcEntryPointUrl
+          value: http://trailer-streaming-grpc:8084
+        - name: WebSocketsEntryPointUrl
+          value: http://trailer-streaming-web-socket:8084           
+        # resources:
+        #   limits:
+        #     cpu: "0.3"    
+        #     memory: "120Mi"
+        #   requests:
+        #     memory: "60Mi"
+        #     cpu: "0.1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app
+  namespace: default
+  labels:
+    service: test-app
+spec:
+  selector:
+    service: test-app
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8090
+# ---
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: test-app-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: test-app
+#   minReplicas: 1
+#   maxReplicas: 5
+#   metrics:
+#     - type: Resource
+#       resource:
+#         name: cpu
+#         target:
+#           type: Utilization
+#           averageUtilization: 50

@@ -1,13 +1,30 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.IdentityModel.Tokens;
+using Prometheus;
+using TrailerStreamingService.gRPC;
 using TrailerStreamingService.gRPC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Additional configuration is required to successfully run gRPC on macOS.
-// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
-//source begin: https://www.c-sharpcorner.com/article/jwt-authentication-and-authorization-in-net-6-0-with-identity-framework/
+builder.WebHost.ConfigureKestrel((context, options) =>
+{
+    options.ListenAnyIP(8094, listenOptions =>
+    {
+        listenOptions.Protocols = HttpProtocols.Http1;
+    });
+    options.ListenAnyIP(8084, listenOptions =>
+    {
+        listenOptions.Protocols = HttpProtocols.Http2;
+    });
+    options.ListenAnyIP(80, listenOptions =>
+    {
+        listenOptions.Protocols = HttpProtocols.Http2;
+    });
+});
+
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
 {
@@ -15,8 +32,6 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-
-// Adding Jwt Bearer
 .AddJwtBearer(options =>
 {
     options.SaveToken = true;
@@ -30,19 +45,58 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true
     };
 });
-//source end
-// Add services to the container.
+
 builder.Services.AddAuthorization();
+//builder.Services.AddGrpc(options =>
+//{
+//    options.MaxSendMessageSize = int.MaxValue;
+//});
+
 builder.Services.AddGrpc(options =>
 {
+    options.Interceptors.Add<MetricsInterceptor>(); // Add the MetricsInterceptor
     options.MaxSendMessageSize = int.MaxValue;
 });
-builder.Services.AddScoped<TrailerStreamingService.Library.Services.StreamingService>();
 
+builder.Services.AddScoped<TrailerStreamingService.Library.Services.StreamingService>();
 
 var app = builder.Build();
 
+//app.Use(async (context, next) =>
+//{
+//    var stopwatch = Stopwatch.StartNew();
+//    var originalBodyStream = context.Response.Body;
+//    await using var responseBody = new MemoryStream();
+//    context.Response.Body = responseBody;
+
+//    try
+//    {
+//        await next.Invoke();
+//    }
+//    finally
+//    {
+//        stopwatch.Stop();
+//        var elapsedMilliseconds = stopwatch.Elapsed.TotalMilliseconds;
+
+//        // Record the response time metric
+//        Metrics.CreateHistogram("grpc_response_time_seconds", "Response time in seconds")
+//            .Observe(elapsedMilliseconds / 1000);
+
+//        responseBody.Seek(0, SeekOrigin.Begin);
+//        var responseText = await new StreamReader(responseBody).ReadToEndAsync();
+//        responseBody.Seek(0, SeekOrigin.Begin);
+//        await responseBody.CopyToAsync(originalBodyStream);
+
+//        // Record the response size metric
+//        var responseSizeBytes = responseBody.Length;
+//        Metrics.CreateCounter("grpc_response_size_bytes", "Response size in bytes")
+//            .Inc(responseSizeBytes);
+//    }
+//});
+
+app.UseMetricServer("/metrics");
 //app.UseRouting();
+app.UseGrpcMetrics();
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -52,4 +106,3 @@ app.MapGrpcService<StreamingService>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
 app.Run();
-

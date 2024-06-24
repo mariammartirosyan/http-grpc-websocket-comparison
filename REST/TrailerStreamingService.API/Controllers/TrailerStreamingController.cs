@@ -42,7 +42,7 @@ namespace TrailerStreamingService.API.Controllers
                     content = JsonSerializer.Serialize(new { UserName = trailerDTO.User.UserName, MovieId = trailerDTO.MovieId });
                     httpContent = new StringContent(content, Encoding.UTF8, "application/json");
                     //response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl")+ "/Statistics", httpContent);
-                    response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl") + "/addStatisticsEntry", httpContent); 
+                    response = await client.PostAsync(Environment.GetEnvironmentVariable("StatisticsServiceUrl") + "/addStatisticsEntry", httpContent);
 
                     _logger.LogInformation($"Request for movie ID = {trailerDTO.MovieId} is being processed");
                     var fileStream = _streamingService.GetMovieTrailer(trailerDTO.MovieId);

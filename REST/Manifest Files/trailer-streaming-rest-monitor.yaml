@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: trailer-streaming-rest-monitor
+  labels:
+    app: trailer-streaming-rest
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      service: trailer-streaming-rest
+  endpoints:
+    - port: api-port
+      path: /metrics
+      interval: 15s

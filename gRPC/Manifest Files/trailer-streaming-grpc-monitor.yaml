@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: trailer-streaming-grpc-monitor
+  labels:
+    app: trailer-streaming-grpc
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      service: trailer-streaming-grpc
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s

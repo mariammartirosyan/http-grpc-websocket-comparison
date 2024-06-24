@@ -15,7 +15,8 @@ spec:
       - name: trailer-streaming-grpc
         image: mariammartirosyan/trailer-streaming-service-grpc:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8084
+        - containerPort: 8094
         env:
         - name: AccountServiceUrl
           value: http://account-service-grpc:8085    
@@ -41,8 +42,13 @@ spec:
     service: trailer-streaming-grpc
   ports:
     - protocol: TCP
-      targetPort: 80 
-      port: 8084 
+      targetPort: 8084
+      port: 8084
+      name: api-port
+    - protocol: TCP
+      targetPort: 8094 
+      port: 8094
+      name: metrics
 # ---
 # apiVersion: autoscaling/v2
 # kind: HorizontalPodAutoscaler
