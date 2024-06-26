@@ -29,7 +29,7 @@ spec:
         #     cpu: "0.2"    
         #     memory: "550Mi"
         #   requests:
-        #     memory: "400Mi"
+        #     memory: "450Mi"
         #     cpu: "0.1"
 ---
 apiVersion: v1

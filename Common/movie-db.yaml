@@ -26,11 +26,11 @@ spec:
           value: pass                         
         # resources:
         #   limits:
-        #     cpu: "0.2"    
+        #     cpu: "0.3"    
         #     memory: "550Mi"
         #   requests:
-        #     memory: "400Mi"
-        #     cpu: "0.1"
+        #     memory: "450Mi"
+        #     cpu: "0.2"
 ---
 apiVersion: v1
 kind: Service

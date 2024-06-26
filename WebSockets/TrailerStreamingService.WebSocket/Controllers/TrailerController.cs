@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
@@ -107,7 +108,7 @@ namespace TrailerStreamingService.WebSocket.Controllers
                
                 if ((int)fetchTrailerResponse.StatusCode==200)
                 {
-                   await webSocket.SendAsync(new ArraySegment<byte>(fetchTrailerResponse.Video), WebSocketMessageType.Binary, true, CancellationToken.None);
+                   await webSocket.SendAsync(new ArraySegment<byte>(fetchTrailerResponse.Video), WebSocketMessageType.Binary, WebSocketMessageFlags.EndOfMessage, CancellationToken.None);
                    await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
                 }
                 else

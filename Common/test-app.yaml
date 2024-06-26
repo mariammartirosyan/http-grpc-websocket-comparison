@@ -22,14 +22,14 @@ spec:
         - name: GrpcEntryPointUrl
           value: http://client-grpc:8081/fetchTrailer
         - name: WebSocketsEntryPointUrl
-          value: http://client-web-sockets:8084/fetchTrailer        
+          value: http://client-web-sockets:8081/fetchTrailer        
         # resources:
         #   limits:
         #     cpu: "0.3"    
-        #     memory: "120Mi"
+        #     memory: "650Mi"
         #   requests:
-        #     memory: "60Mi"
-        #     cpu: "0.1"
+        #     memory: "600Mi"
+        #     cpu: "0.2"
 ---
 apiVersion: v1
 kind: Service

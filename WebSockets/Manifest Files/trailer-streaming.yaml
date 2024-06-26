@@ -43,6 +43,7 @@ spec:
     - protocol: TCP
       targetPort: 80 
       port: 8084 
+      name: api-port
 # ---
 # apiVersion: autoscaling/v2
 # kind: HorizontalPodAutoscaler

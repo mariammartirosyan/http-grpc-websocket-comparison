@@ -32,8 +32,7 @@ else
 fi
 
 echo "Creating the namespace"
-apply_kubectl "../Grafana/metrics-namespace.yaml"
-#apply_kubectl "../Grafana/00-metrics-namespace.yaml"
+apply_kubectl "../Grafana/00-metrics-namespace.yaml"
 
 echo "Deploying Prometheus"
 
@@ -48,16 +47,15 @@ fi
 
 helm install prometheus prometheus-community/kube-prometheus-stack -n metrics
 
-apply_kubectl "../REST/Manifest Files/trailer-streaming-rest-monitor.yaml" 
+apply_kubectl "../WebSockets/Manifest Files/trailer-streaming-web-socket-monitor.yaml" 
 
 # apply_kubectl basic_services/jobs/outer_jobs/db_synchronizer/prod/03-db-synchronizer-monitor.prod.yaml
 
 echo "Deploying Grafana"
-apply_kubectl "../Grafana/grafana.yaml"
-# apply_kubectl "../Grafana/00-grafana-pvc.prod.yaml"
-# apply_kubectl "../Grafana/01-grafana-datasources.prod.yaml"
-# apply_kubectl "../Grafana/02-grafana-deployment.prod.yaml"
-# apply_kubectl "../Grafana/03-grafana-service.prod.yaml"
+apply_kubectl "../Grafana/00-grafana-pvc.prod.yaml"
+apply_kubectl "../Grafana/01-grafana-datasources.prod.yaml"
+apply_kubectl "../Grafana/02-grafana-deployment.prod.yaml"
+apply_kubectl "../Grafana/03-grafana-service.prod.yaml"
 
 
 #apply_kubectl "../REST/Manifest Files/trailer-streaming-rest-monitor.yaml" 

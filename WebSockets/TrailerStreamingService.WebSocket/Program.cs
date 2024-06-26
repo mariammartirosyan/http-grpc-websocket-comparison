@@ -1,6 +1,8 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Prometheus;
 using TrailerStreamingService.Library.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -50,6 +52,34 @@ var webSocketOptions = new WebSocketOptions
     KeepAliveInterval = TimeSpan.FromMinutes(2)
 };
 app.UseWebSockets(webSocketOptions);
+
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/fetchTrailer" && context.WebSockets.IsWebSocketRequest)
+    {
+        var stopwatch = Stopwatch.StartNew();
+
+        try
+        {
+            await next();
+        }
+        finally
+        {
+            stopwatch.Stop();
+            var elapsedMilliseconds = stopwatch.Elapsed.TotalMilliseconds;
+
+            Metrics.CreateHistogram("websocket_response_time_seconds", "WebSocket response time in seconds")
+                .Observe(elapsedMilliseconds / 1000);
+        }
+    }
+    else
+    {
+        await next();
+    }
+});
+
+app.UseMetricServer("/metrics");
 
 app.MapControllers();
 app.Run();

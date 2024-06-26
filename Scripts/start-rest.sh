@@ -10,13 +10,13 @@ apply_kubectl() {
 echo "Deploying the databases"
 
 echo "Deploying the account database"
-apply_kubectl "../REST/Manifest Files/account-db.yaml"
+apply_kubectl "../Common/account-db.yaml"
 
 echo "Deploying the movie database"
-apply_kubectl "../REST/Manifest Files/movie-db.yaml"
+apply_kubectl "../Common/movie-db.yaml"
 
 echo "Deploying the statistics database"
-apply_kubectl "../REST/Manifest Files/statistics-db.yaml"
+apply_kubectl "../Common/statistics-db.yaml"
 
 echo "Installing NGINX Ingress"
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx 
@@ -38,5 +38,11 @@ apply_kubectl "../Common/ingress.yaml"
 
 # apply_kubectl "../REST/Manifest Files/trailer-streaming.yaml" 
 
-#apply_kubectl "../REST/Manifest Files/ingress.yaml" 
+# apply_kubectl "../REST/Manifest Files/ingress.yaml" 
 
+# # apply_kubectl "../REST/Manifest Files/trailer-streaming.yaml"
+
+# #apply_kubectl "../Common/test-app.yaml" 
+
+# apply_kubectl "../Common/test-app.yaml" 
+# apply_kubectl "../Common/ingress.yaml" 
