@@ -37,5 +37,4 @@ apply_kubectl "../WebSockets/Manifest Files/ingress.yaml"
 echo "Deploying the test app"
 apply_kubectl "../Common/test-app.yaml" 
 
-apply_kubectl "../gRPC/Manifest Files/ingress.yaml" 
 apply_kubectl "../Common/ingress.yaml"

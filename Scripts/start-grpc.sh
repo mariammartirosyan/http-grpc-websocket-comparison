@@ -32,7 +32,7 @@ apply_kubectl "../gRPC/Manifest Files/movie.yaml"
 apply_kubectl "../gRPC/Manifest Files/statistics.yaml" 
 apply_kubectl "../gRPC/Manifest Files/trailer-streaming.yaml" 
 
-# echo "Deploying the client app"
+echo "Deploying the client app"
 apply_kubectl "../gRPC/Manifest Files/client.yaml" 
 
 echo "Deploying the test app"

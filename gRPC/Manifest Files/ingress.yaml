@@ -9,24 +9,6 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  # - http:
-  #     paths:
-  #     - path: /account(/|$)(.*)
-  #       pathType: ImplementationSpecific
-  #       backend:
-  #         service:
-  #           name: account
-  #           port:
-  #             number: 80
-  # - http:
-  #     paths:
-  #     - path: /movie(/|$)(.*)
-  #       pathType: ImplementationSpecific
-  #       backend:
-  #         service:
-  #           name: movie
-  #           port:
-  #             number: 80
   - http:
       paths:
       - path: /client-grpc(/|$)(.*)
