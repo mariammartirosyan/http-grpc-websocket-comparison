@@ -1,14 +1,14 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: trailer-streaming-rest-monitor
+  name: trailer-streaming-http-monitor
   labels:
-    app: trailer-streaming-rest
+    app: trailer-streaming-http
     release: prometheus
 spec:
   selector:
     matchLabels:
-      service: trailer-streaming-rest
+      service: trailer-streaming-http
   endpoints:
     - port: api-port
       path: /metrics

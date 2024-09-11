@@ -1,6 +1,3 @@
-#!/bin/bash
-#source: Cloud Computing course
-
 apply_kubectl() {
     file=$1
     kubectl apply -f "$file"
@@ -46,7 +43,7 @@ fi
 
 helm install prometheus prometheus-community/kube-prometheus-stack -n metrics
 
-apply_kubectl "../REST/Manifest Files/trailer-streaming-rest-monitor.yaml" 
+apply_kubectl "../HTTP/Manifest Files/trailer-streaming-http-monitor.yaml" 
 
 echo "Deploying Grafana"
 apply_kubectl "../Grafana/grafana.yaml"

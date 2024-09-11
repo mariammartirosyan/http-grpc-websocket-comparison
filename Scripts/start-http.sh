@@ -26,23 +26,12 @@ helm install my-release ingress-nginx/ingress-nginx --namespace default
 echo "Deploying the microservices"
 kubectl wait --for='jsonpath={.status.conditions[?(@.type=="Ready")].status}=True' deployment.apps/account-db-deployment --timeout=100s
 
-apply_kubectl "../REST/Manifest Files/account.yaml" 
-apply_kubectl "../REST/Manifest Files/movie.yaml" 
-apply_kubectl "../REST/Manifest Files/statistics.yaml" 
-apply_kubectl "../REST/Manifest Files/trailer-streaming.yaml" 
+apply_kubectl "../HTTP/Manifest Files/account.yaml" 
+apply_kubectl "../HTTP/Manifest Files/movie.yaml" 
+apply_kubectl "../HTTP/Manifest Files/statistics.yaml" 
+apply_kubectl "../HTTP/Manifest Files/trailer-streaming.yaml" 
 
 apply_kubectl "../Common/test-app.yaml" 
 
-apply_kubectl "../REST/Manifest Files/ingress.yaml" 
+apply_kubectl "../HTTP/Manifest Files/ingress.yaml" 
 apply_kubectl "../Common/ingress.yaml" 
-
-# apply_kubectl "../REST/Manifest Files/trailer-streaming.yaml" 
-
-# apply_kubectl "../REST/Manifest Files/ingress.yaml" 
-
-# # apply_kubectl "../REST/Manifest Files/trailer-streaming.yaml"
-
-# #apply_kubectl "../Common/test-app.yaml" 
-
-# apply_kubectl "../Common/test-app.yaml" 
-# apply_kubectl "../Common/ingress.yaml" 

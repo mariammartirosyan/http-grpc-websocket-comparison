@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   account-service:
-    image: mariammartirosyan/account-service-rest:latest
+    image: mariammartirosyan/account-service-http:latest
     ports:
       - "8001:80"
     depends_on:
@@ -20,7 +20,7 @@ services:
       - my-network
 
   movie-service:
-    image: mariammartirosyan/movie-service-rest:latest
+    image: mariammartirosyan/movie-service-http:latest
     ports:
       - "8002:80"
     depends_on:
@@ -37,7 +37,7 @@ services:
       - my-network
 
   statistics-service:
-    image: mariammartirosyan/statistics-service-rest:latest
+    image: mariammartirosyan/statistics-service-http:latest
     ports:
       - "8003:80"
     depends_on:
@@ -56,7 +56,7 @@ services:
       - my-network
 
   trailer-streaming-service:
-    image: mariammartirosyan/trailer-streaming-service-rest:latest
+    image: mariammartirosyan/trailer-streaming-service-http:latest
     ports:
       - "8004:80"
     environment:
@@ -66,7 +66,7 @@ services:
       - my-network   
 
   db:
-    restart: unless-stopped
+    httpart: unless-stopped
     image: mysql:8.0
     ports:
       - "3307:3306"

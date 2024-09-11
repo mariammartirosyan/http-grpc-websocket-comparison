@@ -16,7 +16,7 @@
       "applicationUrl": "http://localhost:5011",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "RestEntryPointUrl": "http://34.42.167.136:80/trailer-streaming-rest/fetchTrailer",
+        "HttpEntryPointUrl": "http://34.42.167.136:80/trailer-streaming-rest/fetchTrailer",
         "GrpcEntryPointUrl": "",
         "WebSocketsEntryPointUrl": ""
       },

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 delete_kubectl() {
     resource_type=$1
     resource_name=$2
@@ -21,7 +19,7 @@ delete_kubectl() {
 
 echo "Delete the metrics gathering for the leaf image management system"
 echo "Delete service monitors"
-delete_kubectl servicemonitor trailer-streaming-rest-monitor default
+delete_kubectl servicemonitor trailer-streaming-http-monitor default
  
 echo "Stopping the prometheus services in metrics namespace"
 delete_kubectl service alertmanager-operated metrics
@@ -136,5 +134,3 @@ delete_kubectl crd prometheusrules.monitoring.coreos.com
 delete_kubectl crd scrapeconfigs.monitoring.coreos.com
 delete_kubectl crd servicemonitors.monitoring.coreos.com
 delete_kubectl crd thanosrulers.monitoring.coreos.com
-
-#delete_kubectl servicemonitor trailer-streaming-rest-monitor default

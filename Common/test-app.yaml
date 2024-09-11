@@ -17,19 +17,12 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: RestEntryPointUrl
-          value: http://trailer-streaming-rest:8084/fetchTrailer
+        - name: HttpEntryPointUrl
+          value: http://trailer-streaming-http:8084/fetchTrailer
         - name: GrpcEntryPointUrl
           value: http://client-grpc:8081/fetchTrailer
         - name: WebSocketsEntryPointUrl
           value: http://client-web-sockets:8081/fetchTrailer        
-        # resources:
-        #   limits:
-        #     cpu: "0.3"    
-        #     memory: "650Mi"
-        #   requests:
-        #     memory: "600Mi"
-        #     cpu: "0.2"
 ---
 apiVersion: v1
 kind: Service
@@ -45,22 +38,3 @@ spec:
     - protocol: TCP
       targetPort: 80 
       port: 8090
-# ---
-# apiVersion: autoscaling/v2
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: test-app-hpa
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: test-app
-#   minReplicas: 1
-#   maxReplicas: 5
-#   metrics:
-#     - type: Resource
-#       resource:
-#         name: cpu
-#         target:
-#           type: Utilization
-#           averageUtilization: 50

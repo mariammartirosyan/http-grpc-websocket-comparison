@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace AccountService.API.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
     public class AccountController : ControllerBase
     {
         private readonly Library.Services.AccountService accountService;

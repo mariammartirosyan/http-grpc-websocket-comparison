@@ -10,7 +10,6 @@ namespace StatisticsService.API.Controllers
 {
     [Authorize]
     [ApiController]
-    //[Route("[controller]")]
     public class StatisticsController : ControllerBase
     {
         private readonly Library.Services.StatisticsService statisticService;

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trailer-streaming-http-deployment
+spec:
+  selector:
+    matchLabels:
+      service: trailer-streaming-http
+  template:
+    metadata:
+      labels:
+        service: trailer-streaming-http
+    spec:
+      containers:
+      - name: trailer-streaming-http
+        image: mariammartirosyan/trailer-streaming-service-http:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: AccountServiceUrl
+          value: http://account-service-http:8081     
+        - name: StatisticsServiceUrl
+          value: http://statistics-service-http:8083                               
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trailer-streaming-http
+  labels:
+    service: trailer-streaming-http
+spec:
+  selector:
+    service: trailer-streaming-http
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8084 
+      name: api-port
+
+

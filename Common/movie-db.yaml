@@ -6,7 +6,6 @@ spec:
   selector:
     matchLabels:
       service: movie-db
-  # replicas: 2
   template:
     metadata:
       labels:
@@ -24,13 +23,6 @@ spec:
           value: MovieDB
         - name: MYSQL_ROOT_PASSWORD
           value: pass                         
-        # resources:
-        #   limits:
-        #     cpu: "0.3"    
-        #     memory: "550Mi"
-        #   requests:
-        #     memory: "450Mi"
-        #     cpu: "0.2"
 ---
 apiVersion: v1
 kind: Service
@@ -46,22 +38,3 @@ spec:
     - protocol: TCP
       targetPort: 3306 
       port: 3309
-# ---
-# apiVersion: autoscaling/v2
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: movie-db-hpa
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: movie-db
-#   minReplicas: 1
-#   maxReplicas: 5
-#   metrics:
-#     - type: Resource
-#       resource:
-#         name: cpu
-#         target:
-#           type: Utilization
-#           averageUtilization: 50

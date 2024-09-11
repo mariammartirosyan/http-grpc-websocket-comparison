@@ -7,11 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["REST/MovieService.API/MovieService.API.csproj", "REST/MovieService.API/"]
+COPY ["HTTP/MovieService.API/MovieService.API.csproj", "HTTP/MovieService.API/"]
 COPY ["Libraries/MovieService.Library/MovieService.Library.csproj", "Libraries/MovieService.Library/"]
-RUN dotnet restore "REST/MovieService.API/MovieService.API.csproj"
+RUN dotnet HTTPore "HTTP/MovieService.API/MovieService.API.csproj"
 COPY . .
-WORKDIR "/src/REST/MovieService.API"
+WORKDIR "/src/HTTP/MovieService.API"
 RUN dotnet build "MovieService.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

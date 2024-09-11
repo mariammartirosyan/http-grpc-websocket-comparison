@@ -7,11 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["REST/TrailerStreamingService.API/TrailerStreamingService.API.csproj", "REST/TrailerStreamingService.API/"]
+COPY ["HTTP/TrailerStreamingService.API/TrailerStreamingService.API.csproj", "HTTP/TrailerStreamingService.API/"]
 COPY ["Libraries/TrailerStreamingService.Library/TrailerStreamingService.Library.csproj", "Libraries/TrailerStreamingService.Library/"]
-RUN dotnet restore "REST/TrailerStreamingService.API/TrailerStreamingService.API.csproj"
+RUN dotnet HTTPore "HTTP/TrailerStreamingService.API/TrailerStreamingService.API.csproj"
 COPY . .
-WORKDIR "/src/REST/TrailerStreamingService.API"
+WORKDIR "/src/HTTP/TrailerStreamingService.API"
 RUN dotnet build "TrailerStreamingService.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

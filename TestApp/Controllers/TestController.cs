@@ -1,14 +1,11 @@
 ﻿using System.Net;
-using System.Net.Http;
 using System.Text;
-using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace TestApp.Controllers;
 
 [ApiController]
-//[Route("[controller]")]
 public class TestController : ControllerBase
 {
     private readonly ILogger<TestController> _logger;
@@ -28,15 +25,15 @@ public class TestController : ControllerBase
         }
         switch (version.ToLower())
         {
-            case "rest":
-                var restUrl = Environment.GetEnvironmentVariable("RestEntryPointUrl");
-                if (!string.IsNullOrEmpty(restUrl))
+            case "http":
+                var httpUrl = Environment.GetEnvironmentVariable("HttpEntryPointUrl");
+                if (!string.IsNullOrEmpty(httpUrl))
                 {
-                    await SendRequests(restUrl, numberOfRequests);
+                    await SendRequests(httpUrl, numberOfRequests);
                 }
                 else
                 {
-                    return BadRequest("The entry point url for REST version is not specified.");
+                    return BadRequest("The entry point url for HTTP version is not specified.");
                 }
                 break;
             case "grpc":
@@ -62,7 +59,7 @@ public class TestController : ControllerBase
                 }
                 break;
             default:
-                return BadRequest("Invalid version specified. Valid versions are: rest, grpc, websockets.");
+                return BadRequest("Invalid version specified. Valid versions are: http, grpc, websockets.");
         }
 
         return Ok("Requests completed.");
@@ -95,7 +92,6 @@ public class TestController : ControllerBase
             tasks.Add(Task.Run(async () =>
             {
                 var response = await client.SendAsync(httpRequestMessage);
-               // var response = await client.PostAsync(url, content);
                 response.EnsureSuccessStatusCode();
             }));
         }

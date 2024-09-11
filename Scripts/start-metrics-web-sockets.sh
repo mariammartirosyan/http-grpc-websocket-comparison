@@ -1,6 +1,3 @@
-#!/bin/bash
-#source: Cloud Computing course
-
 apply_kubectl() {
     file=$1
     kubectl apply -f "$file"

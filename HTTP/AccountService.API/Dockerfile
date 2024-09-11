@@ -7,11 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["REST/AccountService.API/AccountService.API.csproj", "REST/AccountService.API/"]
+COPY ["HTTP/AccountService.API/AccountService.API.csproj", "HTTP/AccountService.API/"]
 COPY ["Libraries/AccountService.Library/AccountService.Library.csproj", "Libraries/AccountService.Library/"]
-RUN dotnet restore "REST/AccountService.API/AccountService.API.csproj"
+RUN dotnet HTTPore "HTTP/AccountService.API/AccountService.API.csproj"
 COPY . .
-WORKDIR "/src/REST/AccountService.API"
+WORKDIR "/src/HTTP/AccountService.API"
 RUN dotnet build "AccountService.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

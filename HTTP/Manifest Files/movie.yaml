@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-service-http-deployment
+spec:
+  selector:
+    matchLabels:
+      service: movie-service-http
+  template:
+    metadata:
+      labels:
+        service: movie-service-http
+    spec:
+      containers:
+      - name: movie-service-http
+        image: mariammartirosyan/movie-service-http:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: Platform
+          value: GKE
+        - name: Server
+          value: movie-db
+        - name: Database
+          value: MovieDB
+        - name: UserID
+          value: root
+        - name: Password
+          value: pass    
+        - name: Port
+          value: "3309"                          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-service-http
+  namespace: default
+  labels:
+    service: movie-service-http
+spec:
+  selector:
+    service: movie-service-http
+  ports:
+    - protocol: TCP
+      targetPort: 80 
+      port: 8082

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 apply_kubectl() {
     file=$1
     kubectl apply -f "$file"

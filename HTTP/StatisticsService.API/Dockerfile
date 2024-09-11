@@ -6,11 +6,11 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["REST/StatisticsService.API/StatisticsService.API.csproj", "REST/StatisticsService.API/"]
+COPY ["HTTP/StatisticsService.API/StatisticsService.API.csproj", "HTTP/StatisticsService.API/"]
 COPY ["Libraries/StatisticsService.Library/StatisticsService.Library.csproj", "Libraries/StatisticsService.Library/"]
-RUN dotnet restore "REST/StatisticsService.API/StatisticsService.API.csproj"
+RUN dotnet HTTPore "HTTP/StatisticsService.API/StatisticsService.API.csproj"
 COPY . .
-WORKDIR "/src/REST/StatisticsService.API"
+WORKDIR "/src/HTTP/StatisticsService.API"
 RUN dotnet build "StatisticsService.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
